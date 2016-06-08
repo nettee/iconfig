@@ -1,0 +1,14 @@
+# This file should be placed as $HOME/.gitconfig
+
+[user]
+	name = William
+	email = nettee.liu@gmail.com
+[color]
+	ui = true
+[core]
+	editor = vim
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
