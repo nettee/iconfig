@@ -1,0 +1,21 @@
+# =========================================================
+# Configurations imported by William
+
+alias +='g++'
+alias t='python3'
+alias g='gcc -Wall -Werror'
+alias b='gdb ./a.out'
+alias r='./a.out'
+alias idt='date +%Y.%m.%d'
+alias c='clear'
+alias x='exit'
+alias tm='tmux'
+alias cp='cp -v'
+alias gitlog='git log --author=William --pretty=oneline'
+
+# prevent an unintended remove of files.
+# The `rm` command can no longer really remove files.
+alias rm='mv --target-directory ~/.trash --verbose -f --backup=numbered'
+
+# =========================================================
+

@@ -1,0 +1,4 @@
+# enable vim-like readline
+# only appliable for bash (not zsh)
+set editing-mode vi
+set keymap vi-command
