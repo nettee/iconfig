@@ -1,5 +1,9 @@
+
+#===============================================
+#=========== appended by nettee ================
+#===============================================
+
 alias +='g++'
-alias f='firefox >/dev/null 2>/dev/null'
 alias t='python3.4'
 alias g='gcc -Wall -Werror'
 alias b='gdb ./a.out'
@@ -17,32 +21,21 @@ alias rm='mv --target-directory ~/.trash --verbose -f --backup=numbered'
 
 alias gitlog='git log --author=William --pretty=oneline'
 
-alias eclipse-jpf='/home/william/software/eclipse-neon-java-jpf/eclipse'
-alias jpf='/home/william/software/jpf/jpf-core/bin/jpf'
-
 export SOFT_HOME=$HOME/software
 
-export PATH=/home/william/software/node-4.3.1/bin:$PATH
-export PATH=/home/william/software/mongodb-3.2.6/bin:$PATH
-export PATH=/home/william/software/eclipse-mars-2:$PATH
-export PATH=/home/william/software/sqlite3:$PATH
-export PATH=/home/william/software/cmd_markdown:$PATH
+export NODE_HOME=$SOFT_HOME/node-4.3.1
+export MONGO_HOME=$SOFT_HOME/mongodb-3.2.6
+export SQLITE3_HOME=$SOFT_HOME/sqlite3
+export NEO4J_HOME=$SOFT_HOME/neo4j-community-3.0.3
+export TEXLIVE_HOME=/usr/local/texlive/2016
+
+export JDK8_HOME=$SOFT_HOME/jdk1.8.0_77
+export JAVA_HOME=$JDK8_HOME
 
 export M2_HOME=/home/william/software/apache-maven-3.3.9
-export PATH=/home/william/software/apache-maven-3.3.9/bin:$PATH
 export MAVEN_OPTS="-Xms128m -Xmx512m"
 
-export NEO4J_HOME=/home/william/software/neo4j-community-3.0.3
-export PATH=$NEO4J_HOME/bin:$PATH
-
-export JDK7_HOME=/home/william/software/jdk1.7.0_40
-export JDK8_HOME=/home/william/software/jdk1.8.0_77
-export JRE8_HOME=/home/william/software/jre1.8.0_91
-export JAVA_HOME=$JDK8_HOME
 export PATH=$JAVA_HOME/bin:$PATH
-
-export JUNIT_HOME=$SOFT_HOME/junit
-
-export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
-
-export CLASSPATH=/home/william/projects/GreenDroid3/bin
+export PATH=$M2_HOME/bin:$PATH
+export PATH=$NEO4J_HOME/bin:$PATH
+export PATH=$TEXLIVE_HOME/bin/x86_64-linux:$PATH
