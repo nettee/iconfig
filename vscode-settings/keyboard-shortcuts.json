@@ -1,0 +1,58 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "cmd+d",
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "cmd+d",
+        "command": "editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+cmd+k",
+        "command": "-editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+enter",
+        "command": "editor.action.insertLineAfter",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "-editor.action.insertLineAfter",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+cmd+enter",
+        "command": "editor.action.insertLineBefore",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+cmd+enter",
+        "command": "-editor.action.insertLineBefore",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+j",
+        "command": "editor.action.joinLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-editor.action.joinLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "f2",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "enter",
+        "command": "-renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    }
+]
