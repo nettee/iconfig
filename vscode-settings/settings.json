@@ -1,0 +1,110 @@
+{
+    "workbench.colorTheme": "Better Selenized Light",
+    "editor.fontSize": 13,
+    "workbench.startupEditor": "newUntitledFile",
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "window.zoomLevel": 1,
+    "cSpell.userWords": [
+        "Amalfitano",
+        "Appium",
+        "Automator",
+        "chdir",
+        "Dalvik",
+        "Dynodroid",
+        "Evodroid",
+        "Internetware",
+        "monkeyrunner",
+        "parallelization",
+        "Pressable",
+        "Robotium",
+        "Sapienz",
+        "SCIS",
+        "sqls"
+    ],
+    "todohighlight.isCaseSensitive": false,
+    "todohighlight.isEnable": true,
+    "todohighlight.include": [
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.html",
+        "**/*.php",
+        "**/*.css",
+        "**/*.scss",
+        "**/*.tex"
+    ],
+    "todohighlight.keywords": [
+        "TODO",
+        "FIXME",
+        "XXX"
+    ],
+    "python.jediEnabled": false,
+    "leetcode.endpoint": "leetcode-cn",
+    "leetcode.workspaceFolder": "/Users/william/.leetcode",
+    "latex-workshop.synctex.synctexjs.enabled": false,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.autoBuild.run": "never",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.languageServer": "Default",
+    "tailwindCSS.includeLanguages": {
+        "html": "html",
+        "javascript": "javascript",
+        "css": "css"
+    },
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "extensions.ignoreRecommendations": true,
+    "[typst]": {
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+    },
+    "[typst-code]": {
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+    },
+    "[markdown]": {
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        },
+        "cSpell.fixSpellingWithRenameProvider": true,
+        "cSpell.advanced.feature.useReferenceProviderWithRename": true,
+        "cSpell.advanced.feature.useReferenceProviderRemove": "/^#+\\s/"
+    },
+    "markdownlint.config": {},
+    "cursor.composer.shouldChimeAfterChatFinishes": true,
+    "cursor-retrieval.canAttemptGithubLogin": false,
+    "explorer.confirmDelete": false,
+    "database-client.autoSync": true,
+    "cursor.cpp.disabledLanguages": [
+        "plaintext"
+    ],
+    "explorer.confirmDragAndDrop": false,
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}
