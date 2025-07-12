@@ -30,22 +30,13 @@
         "**/*.ts",
         "**/*.tsx",
         "**/*.html",
-        "**/*.php",
         "**/*.css",
-        "**/*.scss",
-        "**/*.tex"
     ],
     "todohighlight.keywords": [
         "TODO",
         "FIXME",
         "XXX"
     ],
-    "python.jediEnabled": false,
-    "leetcode.endpoint": "leetcode-cn",
-    "leetcode.workspaceFolder": "/Users/william/.leetcode",
-    "latex-workshop.synctex.synctexjs.enabled": false,
-    "latex-workshop.view.pdf.viewer": "tab",
-    "latex-workshop.latex.autoBuild.run": "never",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.languageServer": "Default",
@@ -78,11 +69,10 @@
         "cSpell.advanced.feature.useReferenceProviderWithRename": true,
         "cSpell.advanced.feature.useReferenceProviderRemove": "/^#+\\s/"
     },
-    "markdownlint.config": {},
-    "cursor.composer.shouldChimeAfterChatFinishes": true,
-    "cursor-retrieval.canAttemptGithubLogin": false,
     "explorer.confirmDelete": false,
     "database-client.autoSync": true,
+    "cursor.composer.shouldChimeAfterChatFinishes": true,
+    "cursor-retrieval.canAttemptGithubLogin": false,
     "cursor.cpp.disabledLanguages": [
         "plaintext"
     ],
