@@ -1,3 +1,81 @@
+# 返回 git 主分支
+gmain() {
+  # 1. 如果没有指定参数，尝试自动检测
+  if [ -z "$base_branch" ]; then
+    # 1. 尝试从 git 配置中读取 origin/HEAD 指向的分支
+    # git rev-parse 输出通常是 "origin/main"，我们需要去掉 "origin/"
+    base_branch=$(git rev-parse --abbrev-ref origin/HEAD 2>/dev/null | sed 's#^origin/##')
+  fi
+
+  # 2. 如果上一步失败（base_branch 为空或仍为 HEAD），则手动猜测
+  if [ -z "$base_branch" ] || [ "$base_branch" = "HEAD" ]; then
+    if git show-ref --verify --quiet refs/remotes/origin/main; then
+      base_branch="main"
+    elif git show-ref --verify --quiet refs/remotes/origin/master; then
+      base_branch="master"
+    else
+      base_branch="main" # 实在找不到，默认回退到 main
+    fi
+  fi
+
+  echo $base_branch
+}
+
+# GitHub Pull Request Function
+# Usage: pr [base_branch]
+# Default base branch is 'main' if not specified
+pr() {
+  local base_branch="$1"
+
+  # 如果没有指定参数，尝试自动检测
+  base_branch=$(gmain)
+
+  local current_branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+
+  if [ $? -ne 0 ]; then
+    echo "Error: Not in a git repository."
+    return 1
+  fi
+
+  if [ "$current_branch" = "HEAD" ]; then
+    echo "Error: You are in detached HEAD state. Please checkout a branch first."
+    return 1
+  fi
+
+  local remote_url=$(git config --get remote.origin.url)
+
+  if [ -z "$remote_url" ]; then
+    echo "Error: No remote 'origin' found."
+    return 1
+  fi
+
+  local owner repo
+  # 这里使用了 zsh 特有的正则匹配
+  if [[ $remote_url =~ github\.com[:/]([^/]+)/([^/.]+)(\.git)?$ ]]; then
+    owner="${match[1]}"
+    repo="${match[2]}"
+  else
+    echo "Error: Could not parse GitHub repository from remote URL: $remote_url"
+    return 1
+  fi
+
+  local pr_url="https://github.com/${owner}/${repo}/compare/${base_branch}...${current_branch}"
+
+  echo "Opening pull request URL (Target: $base_branch):"
+  echo "$pr_url"
+  echo ""
+
+  if command -v open &> /dev/null; then
+    open "$pr_url"
+  elif command -v xdg-open &> /dev/null; then
+    xdg-open "$pr_url"
+  elif command -v start &> /dev/null; then
+    start "$pr_url"
+  else
+    echo "Could not detect browser command. Please open the URL manually."
+  fi
+}
+
 function cr() {
   if [[ $# -eq 0 ]]; then
     gh pr comment --body "/cr"

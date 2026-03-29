@@ -1,3 +1,7 @@
+# OpenCode
+alias oc='opencode'
+export PATH=/Users/william/.opencode/bin:$PATH
+
 # Claude Code
 alias cc='claude --plugin-dir /Users/william/projects/zest-dev/plugin'
 alias ccz='claude --plugin-dir /Users/william/projects/zest-dev/plugin'
