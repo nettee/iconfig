@@ -22,4 +22,3 @@ keybind = ctrl+e=text:\x05
 keybind = ctrl+f=text:\x06
 # 修复 Ctrl+B (光标后退)
 keybind = ctrl+b=text:\x02
-

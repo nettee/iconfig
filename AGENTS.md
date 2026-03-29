@@ -5,9 +5,9 @@
 这个仓库当前主要维护以下配置：
 
 - `zsh/`
-- `opencode/`
-- `p10k.zsh`
-- `ghostty/config`
+- `config/opencode/`
+- `config/p10k.zsh`
+- `config/ghostty/config`
 
 其他历史配置一律视为 **deprecated**：
 
@@ -19,21 +19,21 @@
 
 ### ghostty
 
-- 仓库内文件：`ghostty/config`
+- 仓库内文件：`config/ghostty/config`
 - 目标位置：`~/.config/ghostty/config`
 - 管理方式：通过 `make ghostty` 创建软链接
 
 ### p10k
 
-- 仓库内文件：`p10k.zsh`
+- 仓库内文件：`config/p10k.zsh`
 - 目标位置：`~/.p10k.zsh`
 - 管理方式：通过 `make p10k` 创建软链接
 
 ### opencode
 
 - 仓库内文件：
-  - `opencode/opencode.jsonc`
-  - `opencode/oh-my-opencode-slim.jsonc`
+  - `config/opencode/opencode.jsonc`
+  - `config/opencode/oh-my-opencode-slim.jsonc`
 - 目标位置：
   - `~/.config/opencode/opencode.jsonc`
   - `~/.config/opencode/oh-my-opencode-slim.jsonc`
@@ -49,7 +49,7 @@
 ## 推荐原则
 
 1. 当前活跃配置优先使用“仓库内保存 + 家目录软链接”的方式管理。
-2. 新增终端/命令行相关配置时，优先归入 `zsh`、`p10k`、`ghostty`、`opencode` 之一。
+2. 目录约定：`zsh` 保持独立目录；其他活跃配置统一收敛到 `config/` 下。
 3. 对 deprecated 配置，除非明确要求，否则不要继续加功能。
 
 ## 使用方式
