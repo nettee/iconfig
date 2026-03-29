@@ -1,23 +1,13 @@
-all: bash git ibus tmux vim
-.PHONY: all bash git ibus tmux vim
+ROOT := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
 
-bash:
-	cat inputrc-tail >> ~/.inputrc
-	if [ ! -f ~/.bashrc.raw ]; then \
-		cp ~/.bashrc ~/.bashrc.raw; \
-	fi
-	cat ~/.bashrc.raw bashrc-tail > ~/.bashrc
+GHOSTTY_SRC := $(ROOT)/ghostty/config
+GHOSTTY_DEST := $(HOME)/.config/ghostty/config
 
-git:
-	cp gitconfig ~/.gitconfig
+.PHONY: all ghostty
 
-ibus:
-	cp ibus-phrases-xiaohe.txt ~/.config/ibus/pinyin/phrases.txt
-	ibus-daemon -drx # restart ibus
+all: ghostty
 
-tmux:
-	cp tmux.conf ~/.tmux.conf
-
-vim:
-	cp vimrc ~/.vimrc
-
+ghostty:
+	@mkdir -p "$(dir $(GHOSTTY_DEST))"
+	@ln -sfn "$(GHOSTTY_SRC)" "$(GHOSTTY_DEST)"
+	@echo "linked $(GHOSTTY_DEST) -> $(GHOSTTY_SRC)"

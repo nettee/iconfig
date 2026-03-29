@@ -1,0 +1,25 @@
+theme = Selenized Light
+font-size = 14
+window-inherit-working-directory = true
+working-directory = home
+
+# 禁用最常见的编程连字功能 (calt)
+font-feature = -calt
+
+# 避免 OpenCode 出现看不清的文字
+#minimum-contrast = 2.0
+
+# 字体
+font-family = "JetBrains Mono"
+
+# 修复 Ctrl+A (回到行首)
+keybind = ctrl+a=text:\x01
+# 修复 Ctrl+C (中断进程 - 注意：这会覆盖 Ghostty 默认的复制)
+keybind = ctrl+c=text:\x03
+# 修复 Ctrl+E (回到行尾)
+keybind = ctrl+e=text:\x05
+# 修复 Ctrl+F (光标前进)
+keybind = ctrl+f=text:\x06
+# 修复 Ctrl+B (光标后退)
+keybind = ctrl+b=text:\x02
+
