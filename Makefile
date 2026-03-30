@@ -8,6 +8,8 @@ OPENCODE_CONFIG_SRC := $(ROOT)/config/opencode/opencode.jsonc
 OPENCODE_CONFIG_DEST := $(HOME)/.config/opencode/opencode.jsonc
 OPENCODE_PLUGIN_SRC := $(ROOT)/config/opencode/oh-my-opencode-slim.jsonc
 OPENCODE_PLUGIN_DEST := $(HOME)/.config/opencode/oh-my-opencode-slim.jsonc
+OPENCODE_PLUGIN_DIR_SRC := $(ROOT)/config/opencode/oh-my-opencode-slim
+OPENCODE_PLUGIN_DIR_DEST := $(HOME)/.config/opencode/oh-my-opencode-slim
 
 .PHONY: all ghostty p10k opencode
 
@@ -24,7 +26,12 @@ p10k:
 
 opencode:
 	@mkdir -p "$(dir $(OPENCODE_CONFIG_DEST))"
+	@mkdir -p "$(OPENCODE_PLUGIN_DIR_DEST)"
 	@ln -sfn "$(OPENCODE_CONFIG_SRC)" "$(OPENCODE_CONFIG_DEST)"
 	@echo "linked $(OPENCODE_CONFIG_DEST) -> $(OPENCODE_CONFIG_SRC)"
 	@ln -sfn "$(OPENCODE_PLUGIN_SRC)" "$(OPENCODE_PLUGIN_DEST)"
 	@echo "linked $(OPENCODE_PLUGIN_DEST) -> $(OPENCODE_PLUGIN_SRC)"
+	@ln -sfn "$(OPENCODE_PLUGIN_DIR_SRC)/fixer_append.md" "$(OPENCODE_PLUGIN_DIR_DEST)/fixer_append.md"
+	@echo "linked $(OPENCODE_PLUGIN_DIR_DEST)/fixer_append.md -> $(OPENCODE_PLUGIN_DIR_SRC)/fixer_append.md"
+	@ln -sfn "$(OPENCODE_PLUGIN_DIR_SRC)/orchestrator_append.md" "$(OPENCODE_PLUGIN_DIR_DEST)/orchestrator_append.md"
+	@echo "linked $(OPENCODE_PLUGIN_DIR_DEST)/orchestrator_append.md -> $(OPENCODE_PLUGIN_DIR_SRC)/orchestrator_append.md"

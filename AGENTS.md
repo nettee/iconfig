@@ -34,9 +34,13 @@
 - 仓库内文件：
   - `config/opencode/opencode.jsonc`
   - `config/opencode/oh-my-opencode-slim.jsonc`
+  - `config/opencode/oh-my-opencode-slim/fixer_append.md`
+  - `config/opencode/oh-my-opencode-slim/orchestrator_append.md`
 - 目标位置：
   - `~/.config/opencode/opencode.jsonc`
   - `~/.config/opencode/oh-my-opencode-slim.jsonc`
+  - `~/.config/opencode/oh-my-opencode-slim/fixer_append.md`
+  - `~/.config/opencode/oh-my-opencode-slim/orchestrator_append.md`
 - 管理方式：通过 `make opencode` 创建软链接
 
 ### zsh
