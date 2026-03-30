@@ -5,6 +5,7 @@
 这个仓库当前主要维护以下配置：
 
 - `zsh/`
+- `config/git/config`
 - `config/opencode/`
 - `config/p10k.zsh`
 - `config/ghostty/config`
@@ -13,7 +14,7 @@
 
 - 可以保留作参考
 - 默认不继续扩展新能力
-- 如需继续使用，优先考虑迁移到上述四类配置的管理方式
+- 如需继续使用，优先考虑迁移到上述五类配置的管理方式
 
 当前 `deprecated/` 下主要存放这类历史配置，例如：
 
@@ -49,6 +50,12 @@
   - `~/.config/opencode/oh-my-opencode-slim/orchestrator_append.md`
 - 管理方式：通过 `make opencode` 创建软链接
 
+### gitconfig
+
+- 仓库内文件：`config/git/config`
+- 目标位置：`~/.gitconfig`
+- 管理方式：通过 `make gitconfig` 创建软链接
+
 ### zsh
 
 - 仓库内目录：`zsh/`
@@ -67,5 +74,6 @@
 
 - `make ghostty`
 - `make p10k`
+- `make gitconfig`
 - `make opencode`
 - `make`：一次处理当前 Makefile 中维护的全部活跃配置

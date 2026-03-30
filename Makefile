@@ -4,6 +4,8 @@ GHOSTTY_SRC := $(ROOT)/config/ghostty/config
 GHOSTTY_DEST := $(HOME)/.config/ghostty/config
 P10K_SRC := $(ROOT)/config/p10k.zsh
 P10K_DEST := $(HOME)/.p10k.zsh
+GITCONFIG_SRC := $(ROOT)/config/git/config
+GITCONFIG_DEST := $(HOME)/.gitconfig
 OPENCODE_CONFIG_SRC := $(ROOT)/config/opencode/opencode.jsonc
 OPENCODE_CONFIG_DEST := $(HOME)/.config/opencode/opencode.jsonc
 OPENCODE_PLUGIN_SRC := $(ROOT)/config/opencode/oh-my-opencode-slim.jsonc
@@ -11,9 +13,9 @@ OPENCODE_PLUGIN_DEST := $(HOME)/.config/opencode/oh-my-opencode-slim.jsonc
 OPENCODE_PLUGIN_DIR_SRC := $(ROOT)/config/opencode/oh-my-opencode-slim
 OPENCODE_PLUGIN_DIR_DEST := $(HOME)/.config/opencode/oh-my-opencode-slim
 
-.PHONY: all ghostty p10k opencode
+.PHONY: all ghostty p10k gitconfig opencode
 
-all: ghostty p10k opencode
+all: ghostty p10k gitconfig opencode
 
 ghostty:
 	@mkdir -p "$(dir $(GHOSTTY_DEST))"
@@ -23,6 +25,10 @@ ghostty:
 p10k:
 	@ln -sfn "$(P10K_SRC)" "$(P10K_DEST)"
 	@echo "linked $(P10K_DEST) -> $(P10K_SRC)"
+
+gitconfig:
+	@ln -sfn "$(GITCONFIG_SRC)" "$(GITCONFIG_DEST)"
+	@echo "linked $(GITCONFIG_DEST) -> $(GITCONFIG_SRC)"
 
 opencode:
 	@mkdir -p "$(dir $(OPENCODE_CONFIG_DEST))"
