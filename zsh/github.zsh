@@ -84,6 +84,12 @@ function cr() {
   fi
 }
 
+gh-prs() {
+  gh api graphql \
+    -f query='query($n:Int!){ viewer { pullRequests(first:$n, states: OPEN, orderBy: {field: UPDATED_AT, direction: DESC}) { nodes { number title url updatedAt repository { nameWithOwner } } pageInfo { hasNextPage endCursor } } }}' \
+    -F n="${1:-100}"
+}
+
 # 在 GitHub 网页端打开指定文件
 function gh-open() {
     # 1. 检查是否在 git 目录
