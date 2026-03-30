@@ -22,3 +22,6 @@ keybind = ctrl+e=text:\x05
 keybind = ctrl+f=text:\x06
 # 修复 Ctrl+B (光标后退)
 keybind = ctrl+b=text:\x02
+
+# Cmd+Shift+K 打开/关闭临时终端（Quick Terminal）
+keybind = global:cmd+shift+k=toggle_quick_terminal
