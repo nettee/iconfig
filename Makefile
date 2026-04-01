@@ -46,3 +46,5 @@ opencode:
 	@echo "linked $(OPENCODE_PLUGIN_DIR_DEST)/fixer_append.md -> $(OPENCODE_PLUGIN_DIR_SRC)/fixer_append.md"
 	@ln -sfn "$(OPENCODE_PLUGIN_DIR_SRC)/orchestrator_append.md" "$(OPENCODE_PLUGIN_DIR_DEST)/orchestrator_append.md"
 	@echo "linked $(OPENCODE_PLUGIN_DIR_DEST)/orchestrator_append.md -> $(OPENCODE_PLUGIN_DIR_SRC)/orchestrator_append.md"
+	@ln -sfn "$(OPENCODE_PLUGIN_DIR_SRC)/oracle_append.md" "$(OPENCODE_PLUGIN_DIR_DEST)/oracle_append.md"
+	@echo "linked $(OPENCODE_PLUGIN_DIR_DEST)/oracle_append.md -> $(OPENCODE_PLUGIN_DIR_SRC)/oracle_append.md"
