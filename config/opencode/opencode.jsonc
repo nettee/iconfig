@@ -3,6 +3,7 @@
     "oh-my-opencode-slim"
   ],
   "$schema": "https://opencode.ai/config.json",
+  "lsp": false,
   "mcp": {
     //"linear": {
     //  "type": "remote",
