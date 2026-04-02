@@ -1,5 +1,5 @@
-{
-  "preset": "openai",
+j{
+  "preset": "mixed",
   "presets": {
     "openai": {
       "orchestrator": {
@@ -13,7 +13,7 @@
       },
       "oracle": {
         "model": "openai/gpt-5.4",
-        "variant": "high",
+        "variant": "medium",
         "skills": [],
         "mcps": []
       },
