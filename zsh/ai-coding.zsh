@@ -1,5 +1,6 @@
 # OpenCode
 alias oc='opencode'
+alias ocb='opencode --agent build -m openai/gpt-5.4'
 alias ocf='opencode --agent build -m openai/gpt-5.3-codex-spark'
 export PATH=/Users/william/.opencode/bin:$PATH
 
