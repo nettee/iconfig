@@ -1,5 +1,5 @@
 [user]
-	name = William
+	name = nettee
 	email = nettee.liu@gmail.com
 [color]
 	ui = true
@@ -7,6 +7,11 @@
 	editor = vim
 [alias]
 	st = status
-	ci = commit
-	co = checkout
 	br = branch
+	ci = commit
+    cp = cherry-pick
+	co = checkout
+    m = checkout main
+    p = pull
+    ph = push -u origin HEAD
+    wt = worktree
