@@ -1,1 +1,1 @@
-alias z='zest-dev'
+#alias z='zest-dev'
