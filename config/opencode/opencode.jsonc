@@ -4,13 +4,6 @@
   ],
   "$schema": "https://opencode.ai/config.json",
   "lsp": false,
-  "permission": {
-    "bash": {
-      "*": "allow",
-      "bun": "deny",
-      "bun *": "deny"
-    }
-  },
   "mcp": {
     //"linear": {
     //  "type": "remote",
