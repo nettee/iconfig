@@ -132,3 +132,5 @@ function gh-open() {
     echo "Opening: $final_url"
     open "$final_url"
 }
+
+alias gh-pr='gh pr view --web'
