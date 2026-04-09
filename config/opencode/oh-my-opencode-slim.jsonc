@@ -1,7 +1,7 @@
-j{
+{
   "preset": "mixed",
   "presets": {
-    "openai": {
+    "mixed": {
       "orchestrator": {
         "model": "openai/gpt-5.4",
         "skills": [
