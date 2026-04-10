@@ -11,6 +11,7 @@
 	ci = commit
     cp = cherry-pick
 	co = checkout
+    n = checkout -b
     m = checkout main
     p = pull
     ph = push -u origin HEAD
