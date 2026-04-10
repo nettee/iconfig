@@ -19,6 +19,15 @@
     //"linear_*": false,
     //"linear_get_issue": true
   },
+  "permission": {
+    "bash": {
+      "terraform * apply*": "deny",
+      "terraform * init*": "allow",
+      "terraform * fmt*": "allow",
+      "terraform * plan*": "allow",
+      "terraform * validate*": "allow"
+    }
+  },
   "provider": {
     "kimi-for-coding": {
       "name": "Kimi For Coding",
