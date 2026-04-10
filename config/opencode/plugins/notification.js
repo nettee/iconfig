@@ -42,16 +42,32 @@ export const NotificationPlugin = async ({ project, $, directory, client }) => {
     }
   }
 
+  const promptEventTypes = new Set([
+    "permission.asked",
+    "question.asked",
+    "tui.prompt.append",
+  ])
+
+  const getPromptMessage = (event) => {
+    if (event.type === "permission.asked") {
+      return `Permission required · ${dirName}`
+    }
+
+    return `Input required · ${dirName}`
+  }
+
   return {
     event: async ({ event }) => {
-      if (!(await isRootSessionEvent(event))) {
+      const isPromptEvent = promptEventTypes.has(event.type)
+
+      if (!isPromptEvent && !(await isRootSessionEvent(event))) {
         return
       }
 
-      if (event.type === "permission.asked") {
+      if (isPromptEvent) {
         await notify({
           subtitle: "Waiting for input",
-          message: `Permission required · ${dirName}`,
+          message: getPromptMessage(event),
         })
       }
 
