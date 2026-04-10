@@ -6,16 +6,7 @@ export const NotificationPlugin = async ({ project, $, directory }) => {
   const title = projectName || `opencode · ${dirName}`
 
   const notify = async ({ subtitle, message }) => {
-    try {
-      await $`cmux notify --title ${title} --subtitle ${subtitle} --body ${message}`
-      return
-    } catch {}
-
-    await $`osascript -e '
-      on run argv
-        display notification (item 1 of argv) with title (item 2 of argv) subtitle (item 3 of argv)
-      end run
-    ' ${message} ${title} ${subtitle}`
+    await $`cmux notify --title ${title} --subtitle ${subtitle} --body ${message}`
   }
 
   return {
