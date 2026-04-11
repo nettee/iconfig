@@ -9,6 +9,7 @@
 - `config/opencode/`
 - `config/p10k.zsh`
 - `config/ghostty/config`
+- `config/cmux/settings.json`
 
 其他历史配置统一收敛到仓库根目录下的 `deprecated/`，一律视为 **deprecated**：
 
@@ -29,6 +30,12 @@
 - 仓库内文件：`config/ghostty/config`
 - 目标位置：`~/.config/ghostty/config`
 - 管理方式：通过 `make ghostty` 创建软链接
+
+### cmux
+
+- 仓库内文件：`config/cmux/settings.json`
+- 目标位置：`~/.config/cmux/settings.json`
+- 管理方式：通过 `make cmux` 创建软链接
 
 ### p10k
 
@@ -77,6 +84,7 @@
 ## 使用方式
 
 - `make ghostty`
+- `make cmux`
 - `make p10k`
 - `make gitconfig`
 - `make opencode`

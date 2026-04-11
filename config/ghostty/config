@@ -1,4 +1,6 @@
 theme = Selenized Light
+#theme = Dracula
+
 font-size = 14
 window-inherit-working-directory = true
 working-directory = home
@@ -25,3 +27,6 @@ keybind = ctrl+b=text:\x02
 
 # Cmd+Shift+K 打开/关闭临时终端（Quick Terminal）
 keybind = global:cmd+shift+k=toggle_quick_terminal
+
+# Cmd+Shift+= 均匀分配分屏尺寸
+keybind = cmd+shift+=equalize_splits
