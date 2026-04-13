@@ -26,6 +26,15 @@
       "terraform * fmt*": "allow",
       "terraform * plan*": "allow",
       "terraform * validate*": "allow"
+    },
+    "external_directory": {
+      "/tmp/**": "allow"
+    },
+    "read": {
+      "/tmp/**": "allow"
+    },
+    "edit": {
+      "/tmp/**": "allow"
     }
   },
   "provider": {
