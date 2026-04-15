@@ -8,7 +8,8 @@
           "*"
         ],
         "mcps": [
-          "websearch"
+          "websearch",
+          "chrome-devtools"
         ]
       },
       "oracle": {
@@ -38,13 +39,17 @@
         "skills": [
           "agent-browser"
         ],
-        "mcps": []
+        "mcps": [
+          "chrome-devtools"
+        ]
       },
       "fixer": {
         "model": "openai/gpt-5.3-codex",
         "variant": "low",
         "skills": [],
-        "mcps": []
+        "mcps": [
+          "chrome-devtools"
+        ]
       }
     }
   }
