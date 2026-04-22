@@ -10,6 +10,8 @@ GITCONFIG_SRC := $(ROOT)/config/git/config
 GITCONFIG_DEST := $(HOME)/.gitconfig
 OPENCODE_CONFIG_SRC := $(ROOT)/config/opencode/opencode.jsonc
 OPENCODE_CONFIG_DEST := $(HOME)/.config/opencode/opencode.jsonc
+OPENCODE_TUI_SRC := $(ROOT)/config/opencode/tui.jsonc
+OPENCODE_TUI_DEST := $(HOME)/.config/opencode/tui.jsonc
 OPENCODE_PLUGIN_SRC := $(ROOT)/config/opencode/oh-my-opencode-slim.jsonc
 OPENCODE_PLUGIN_DEST := $(HOME)/.config/opencode/oh-my-opencode-slim.jsonc
 OPENCODE_PLUGIN_DIR_SRC := $(ROOT)/config/opencode/oh-my-opencode-slim
@@ -45,6 +47,8 @@ opencode:
 	@mkdir -p "$(dir $(OPENCODE_LOCAL_PLUGINS_DEST))"
 	@ln -sfn "$(OPENCODE_CONFIG_SRC)" "$(OPENCODE_CONFIG_DEST)"
 	@echo "linked $(OPENCODE_CONFIG_DEST) -> $(OPENCODE_CONFIG_SRC)"
+	@ln -sfn "$(OPENCODE_TUI_SRC)" "$(OPENCODE_TUI_DEST)"
+	@echo "linked $(OPENCODE_TUI_DEST) -> $(OPENCODE_TUI_SRC)"
 	@ln -sfn "$(OPENCODE_PLUGIN_SRC)" "$(OPENCODE_PLUGIN_DEST)"
 	@echo "linked $(OPENCODE_PLUGIN_DEST) -> $(OPENCODE_PLUGIN_SRC)"
 	@ln -sfn "$(OPENCODE_LOCAL_PLUGINS_SRC)" "$(OPENCODE_LOCAL_PLUGINS_DEST)"

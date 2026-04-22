@@ -47,6 +47,7 @@
 
 - 仓库内文件：
 - `config/opencode/opencode.jsonc`
+- `config/opencode/tui.jsonc`
 - `config/opencode/oh-my-opencode-slim.jsonc`
 - `config/opencode/plugins/notification.js`
 - `config/opencode/oh-my-opencode-slim/fixer_append.md`
@@ -54,6 +55,7 @@
 - `config/opencode/oh-my-opencode-slim/oracle_append.md`
 - 目标位置：
 - `~/.config/opencode/opencode.jsonc`
+- `~/.config/opencode/tui.jsonc`
 - `~/.config/opencode/oh-my-opencode-slim.jsonc`
 - `~/.config/opencode/plugins/notification.js`
 - `~/.config/opencode/oh-my-opencode-slim/fixer_append.md`
