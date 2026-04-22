@@ -1,5 +1,10 @@
 {
   "preset": "mixed",
+  "todoContinuation": {
+    "autoEnable": false,
+    "maxContinuations": 1,
+    "cooldownMs": 3000
+  },
   "presets": {
     "mixed": {
       "orchestrator": {
