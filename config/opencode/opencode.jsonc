@@ -3,6 +3,9 @@
     "oh-my-opencode-slim"
   ],
   "$schema": "https://opencode.ai/config.json",
+  "experimental": {
+    "disable_paste_summary": true
+  },
   "lsp": false,
   "mcp": {
     //"linear": {
