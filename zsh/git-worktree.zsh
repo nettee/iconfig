@@ -23,14 +23,27 @@ _g-wt-project-name() {
   basename "$(git rev-parse --show-toplevel 2>/dev/null)"
 }
 
+# Returns the git root directory.
+_g-wt-root() {
+  git rev-parse --show-toplevel 2>/dev/null
+}
+
+# Returns the parent directory of the git root.
+_g-wt-base-dir() {
+  local root
+  root=$(_g-wt-root) || return 1
+  dirname "$root"
+}
+
 # Returns the worktree path for a given branch name.
 # Usage: _g-wt-path <branch-name>
 _g-wt-path() {
   local branch="$1"
   local safe_branch="${branch//\//-}"
-  local project_dir
+  local project_dir base_dir
   project_dir=$(_g-wt-project-name)
-  echo "../${project_dir}-wt-${safe_branch}"
+  base_dir=$(_g-wt-base-dir) || return 1
+  echo "${base_dir}/${project_dir}-wt-${safe_branch}"
 }
 
 # Creates a git worktree with a new branch based on the main branch.
@@ -188,7 +201,7 @@ g-wt-transfer() {
   fi
 
   if [[ -n "$worktree_name" ]]; then
-    worktree_path="../${worktree_name}"
+    worktree_path="$(_g-wt-base-dir)/${worktree_name}"
   else
     worktree_path=$(_g-wt-path "$branch")
   fi
