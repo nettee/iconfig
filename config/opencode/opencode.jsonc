@@ -13,10 +13,10 @@
     //  "url": "https://mcp.linear.app/mcp",
     //  "oauth": {}
     //},
-    //"chrome-devtools": {
-    //  "type": "local",
-    //  "command": ["npx", "-y", "chrome-devtools-mcp@latest"]
-    //}
+    "chrome-devtools": {
+      "type": "local",
+      "command": ["npx", "-y", "chrome-devtools-mcp@latest"]
+    }
   },
   "tools": {
     "auto_continue": false
