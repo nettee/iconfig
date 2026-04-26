@@ -1,7 +1,8 @@
 # OpenCode
-alias oc='opencode'
-alias ocb='opencode --agent build -m openai/gpt-5.4'
-alias ocf='opencode --agent build -m openai/gpt-5.3-codex-spark'
+alias ocs='opencode'
+alias oc='OH_MY_OPENCODE_SLIM_PRESET=fast opencode'
+alias ocb='opencode --agent build'
+alias ocp='opencode --agent plan'
 export PATH=/Users/william/.opencode/bin:$PATH
 
 # Claude Code

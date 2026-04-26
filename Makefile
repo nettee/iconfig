@@ -21,7 +21,7 @@ OPENCODE_PLUGIN_DIR_DEST := $(HOME)/.config/opencode/oh-my-opencode-slim
 OPENCODE_LOCAL_PLUGINS_SRC := $(ROOT)/config/opencode/plugins
 OPENCODE_LOCAL_PLUGINS_DEST := $(HOME)/.config/opencode/plugins
 
-.PHONY: all ghostty cmux codex p10k gitconfig opencode
+.PHONY: all ghostty cmux codex p10k gitconfig opencode opencode-generate
 
 all: ghostty cmux codex p10k gitconfig opencode
 
@@ -48,7 +48,7 @@ gitconfig:
 	@ln -sfn "$(GITCONFIG_SRC)" "$(GITCONFIG_DEST)"
 	@echo "linked $(GITCONFIG_DEST) -> $(GITCONFIG_SRC)"
 
-opencode:
+opencode: opencode-generate
 	@mkdir -p "$(dir $(OPENCODE_CONFIG_DEST))"
 	@mkdir -p "$(OPENCODE_PLUGIN_DIR_DEST)"
 	@mkdir -p "$(dir $(OPENCODE_LOCAL_PLUGINS_DEST))"
@@ -66,3 +66,6 @@ opencode:
 	@echo "linked $(OPENCODE_PLUGIN_DIR_DEST)/orchestrator_append.md -> $(OPENCODE_PLUGIN_DIR_SRC)/orchestrator_append.md"
 	@ln -sfn "$(OPENCODE_PLUGIN_DIR_SRC)/oracle_append.md" "$(OPENCODE_PLUGIN_DIR_DEST)/oracle_append.md"
 	@echo "linked $(OPENCODE_PLUGIN_DIR_DEST)/oracle_append.md -> $(OPENCODE_PLUGIN_DIR_SRC)/oracle_append.md"
+
+opencode-generate:
+	@python3 "$(ROOT)/config/opencode/config-generator.py"

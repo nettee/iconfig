@@ -1,0 +1,32 @@
+active_preset = "default"
+chrome_devtools_mcp = false
+
+[opencode.models]
+build = "openai/gpt-5.5-fast"
+plan = "openai/gpt-5.5-fast"
+
+[presets.default.models]
+orchestrator = "openai/gpt-5.5"
+oracle = "openai/gpt-5.5"
+designer = "openai/gpt-5.4"
+fixer = "openai/gpt-5.4"
+explorer = "xai/grok-4-1-fast-non-reasoning"
+librarian = "xai/grok-4-1-fast"
+
+[presets.default.variants]
+oracle = "high"
+designer = "high"
+fixer = "low"
+
+[presets.fast.models]
+orchestrator = "openai/gpt-5.5-fast"
+oracle = "openai/gpt-5.5-fast"
+designer = "openai/gpt-5.5-fast"
+fixer = "openai/gpt-5.5-fast"
+explorer = "xai/grok-4-1-fast-non-reasoning"
+librarian = "xai/grok-4-1-fast"
+
+[presets.fast.variants]
+oracle = "medium"
+designer = "medium"
+fixer = "low"
