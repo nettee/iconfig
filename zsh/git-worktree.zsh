@@ -102,6 +102,10 @@ g-wt-create() {
   echo "→ Creating worktree at '${worktree_path}' from '${base_branch}'..."
   if git worktree add -b "$branch" "$worktree_path" "$base_branch"; then
     echo "✓ Worktree created at: $worktree_path"
+    if command -v pbcopy >/dev/null 2>&1; then
+      printf '%s' "$worktree_path" | pbcopy
+      echo "✓ Worktree path copied to clipboard"
+    fi
   else
     echo "✗ Failed to create worktree"
     return 1
