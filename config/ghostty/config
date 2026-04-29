@@ -12,7 +12,10 @@ font-feature = -calt
 #minimum-contrast = 2.0
 
 # 字体
-font-family = "JetBrains Mono"
+# 主字体使用 Nerd Font 版本以匹配 Powerlevel10k 的 nerdfont-v3 配置。
+# JetBrains Mono 不包含完整中文 glyph，中文显式走单一简体中文 fallback，避免按字符混用繁中黑体和新宋体。
+font-family = "JetBrainsMono Nerd Font Mono"
+font-family = "微软雅黑"
 
 # 修复 Ctrl+A (回到行首)
 keybind = ctrl+a=text:\x01
