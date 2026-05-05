@@ -7,7 +7,11 @@ export const NotificationPlugin = async ({ project, $, directory, client }) => {
   const rootSessionCache = new Map()
 
   const notify = async ({ subtitle, message }) => {
-    await $`cmux notify --title ${title} --subtitle ${subtitle} --body ${message}`
+    try {
+      await $`cmux notify --title ${title} --subtitle ${subtitle} --body ${message}`
+    } catch {
+      // cmux CLI may be unavailable in terminals launched outside cmux.
+    }
   }
 
   const getSessionID = (event) => {
