@@ -10,6 +10,7 @@ orchestrator = "openai/gpt-5.5"
 oracle = "openai/gpt-5.5"
 designer = "openai/gpt-5.4"
 fixer = "openai/gpt-5.4"
+council = "openai/gpt-5.5"
 explorer = "xai/grok-4-1-fast-non-reasoning"
 librarian = "xai/grok-4-1-fast"
 
@@ -17,12 +18,14 @@ librarian = "xai/grok-4-1-fast"
 oracle = "high"
 designer = "high"
 fixer = "low"
+council = "high"
 
 [presets.fast.models]
 orchestrator = "openai/gpt-5.5-fast"
 oracle = "openai/gpt-5.5-fast"
 designer = "openai/gpt-5.5-fast"
 fixer = "openai/gpt-5.5-fast"
+council = "openai/gpt-5.5-fast"
 explorer = "xai/grok-4-1-fast-non-reasoning"
 librarian = "xai/grok-4-1-fast"
 
@@ -30,3 +33,31 @@ librarian = "xai/grok-4-1-fast"
 oracle = "medium"
 designer = "medium"
 fixer = "low"
+council = "high"
+
+[council]
+default_preset = "default"
+timeout = 180000
+councillor_execution_mode = "parallel"
+councillor_retries = 3
+
+[council.presets.default.alpha]
+model = "openai/gpt-5.4"
+prompt = """
+Role: Requirements and scope reviewer.
+Focus on whether the proposal satisfies the stated user goals, preserves constraints, and defines clear acceptance criteria. Identify missing requirements, ambiguous assumptions, unnecessary scope, and phase/checkpoint gaps. Prefer concrete clarifying questions and crisp scope decisions.
+"""
+
+[council.presets.default.beta]
+model = "openai/gpt-5.4"
+prompt = """
+Role: Architecture and trade-off reviewer.
+Focus on system boundaries, data flow, API/module changes, maintainability, testability, performance, and long-term design consequences. Compare viable options, state rationale and trade-offs, and recommend the simplest durable architecture.
+"""
+
+[council.presets.default.gamma]
+model = "openai/gpt-5.4"
+prompt = """
+Role: Implementation risk and validation reviewer.
+Focus on failure modes, migration/rollout risks, edge cases, required file/database/API changes, observability, and test strategy. Surface blockers early, call out unsafe fallbacks or hidden integration failures, and propose verifiable implementation steps.
+"""

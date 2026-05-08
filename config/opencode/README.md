@@ -17,42 +17,7 @@ Manually maintained files:
 
 ## Meta Config
 
-Edit `config-generator.toml` to switch the frequently changed options:
-
-```toml
-active_preset = "default"
-chrome_devtools_mcp = false
-
-[opencode.models]
-build = "openai/gpt-5.5"
-plan = "openai/gpt-5.5-fast"
-
-[presets.default.models]
-orchestrator = "openai/gpt-5.5"
-oracle = "openai/gpt-5.5"
-designer = "openai/gpt-5.4"
-fixer = "openai/gpt-5.4"
-explorer = "xai/grok-4-1-fast-non-reasoning"
-librarian = "xai/grok-4-1-fast"
-
-[presets.default.variants]
-oracle = "high"
-designer = "high"
-fixer = "low"
-
-[presets.fast.models]
-orchestrator = "openai/gpt-5.5-fast"
-oracle = "openai/gpt-5.5-fast"
-designer = "openai/gpt-5.5-fast"
-fixer = "openai/gpt-5.5-fast"
-explorer = "xai/grok-4-1-fast-non-reasoning"
-librarian = "xai/grok-4-1-fast"
-
-[presets.fast.variants]
-oracle = "medium"
-designer = "medium"
-fixer = "low"
-```
+Edit `config-generator.toml` to change active presets, model mappings, variants, MCP toggles, and Council settings. The generated JSONC files are the runtime output.
 
 Supported fields:
 
@@ -62,6 +27,7 @@ Supported fields:
 - `[presets.default.models]`: baseline model names. This preset must define every agent.
 - `[presets.<name>.models]`: model overrides for a preset.
 - `[presets.<name>.variants]`: optional variant overrides for a preset.
+- `[council]`: Council runtime settings and councillor presets.
 
 Current agents:
 
@@ -78,10 +44,11 @@ OMO Slim agents:
 - `explorer`
 - `designer`
 - `fixer`
+- `council`
 
 `default` is the baseline preset. Other presets inherit from `default`, so they only need to list the values they change.
 
-`fast` switches the GPT agents to `openai/gpt-5.5-fast`. OpenCode exposes this as `GPT-5.5 Fast`; internally it uses the `gpt-5.5` API model with priority service tier.
+`fast` is a speed-oriented preset for GPT agents.
 
 ## Workflow
 

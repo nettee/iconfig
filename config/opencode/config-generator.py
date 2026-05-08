@@ -14,6 +14,7 @@ AGENT_ORDER = (
     "explorer",
     "designer",
     "fixer",
+    "council",
 )
 
 OPENCODE_AGENT_ORDER = (
@@ -161,11 +162,16 @@ def build_preset_config(agents, enable_chrome):
             mcps=[],
             include_chrome=enable_chrome,
         ),
+        "council": agent_config(
+            agents["council"],
+            skills=[],
+            mcps=[],
+        ),
     }
 
 
-def build_plugin_config(active_preset, presets, enable_chrome):
-    return {
+def build_plugin_config(active_preset, presets, council, enable_chrome):
+    config = {
         "preset": active_preset,
         "todoContinuation": {
             "autoEnable": False,
@@ -177,6 +183,11 @@ def build_plugin_config(active_preset, presets, enable_chrome):
             for name, agents in presets.items()
         },
     }
+
+    if council:
+        config["council"] = council
+
+    return config
 
 
 def build_agent_meta(models, variants):
@@ -229,11 +240,11 @@ def load_meta():
         for name, preset in presets.items()
     }
 
-    return meta, active_preset, resolved_presets, opencode_models
+    return meta, active_preset, resolved_presets, opencode_models, meta.get("council")
 
 
 def main():
-    meta, active_preset, presets, opencode_models = load_meta()
+    meta, active_preset, presets, opencode_models, council = load_meta()
     enable_chrome = bool(meta.get("chrome_devtools_mcp", False))
 
     write_json(
@@ -242,7 +253,7 @@ def main():
     )
     write_json(
         BASE_DIR / "oh-my-opencode-slim.jsonc",
-        build_plugin_config(active_preset, presets, enable_chrome),
+        build_plugin_config(active_preset, presets, council, enable_chrome),
     )
 
 
