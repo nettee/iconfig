@@ -1,0 +1,30 @@
+[parts]
+let_it_crash_fast_fail = "parts/let_it_crash_fast_fail.md"
+talk_normal = "parts/talk_normal.md"
+lsp_diagnostics_disabled = "parts/lsp_diagnostics_disabled.md"
+
+[[targets]]
+path = "../codex/AGENTS.md"
+parts = [
+  "let_it_crash_fast_fail",
+  "talk_normal",
+]
+
+[[targets]]
+path = "../opencode/oh-my-opencode-slim/orchestrator_append.md"
+parts = [
+  "let_it_crash_fast_fail",
+  "talk_normal",
+]
+
+[[targets]]
+path = "../opencode/oh-my-opencode-slim/oracle_append.md"
+parts = [
+  "let_it_crash_fast_fail",
+]
+
+[[targets]]
+path = "../opencode/oh-my-opencode-slim/fixer_append.md"
+parts = [
+  "let_it_crash_fast_fail",
+]

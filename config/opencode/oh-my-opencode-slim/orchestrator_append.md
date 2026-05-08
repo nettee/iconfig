@@ -27,17 +27,9 @@ Review checklist:
 - No “best effort” continuation after a failed required step.
 - No success message after partial failure.
 
-<instruction name="todo_hygiene">
-If you are finishing now, do not leave the active todo in_progress. Mark it completed, or move unfinished work back to pending.
-</instruction>
-
 ---
 
-<internal_reminder>!IMPORTANT! Recall the workflow rules:
-Understand → choose the best parallelized path based on your capabilities and agents delegation rules → recall session reuse rules → execute → verify.
-If delegating, launch the specialist in the same turn you mention it !END!</internal_reminder>
-
----
+## Talk Normal
 
 <!-- talk-normal 0.6.2 -->
 

@@ -21,7 +21,7 @@ OPENCODE_PLUGIN_DIR_DEST := $(HOME)/.config/opencode/oh-my-opencode-slim
 OPENCODE_LOCAL_PLUGINS_SRC := $(ROOT)/config/opencode/plugins
 OPENCODE_LOCAL_PLUGINS_DEST := $(HOME)/.config/opencode/plugins
 
-.PHONY: all ghostty cmux codex p10k gitconfig opencode opencode-generate
+.PHONY: all ghostty cmux codex p10k gitconfig opencode opencode-generate prompt
 
 all: ghostty cmux codex p10k gitconfig opencode
 
@@ -35,7 +35,7 @@ cmux:
 	@ln -sfn "$(CMUX_SRC)" "$(CMUX_DEST)"
 	@echo "linked $(CMUX_DEST) -> $(CMUX_SRC)"
 
-codex:
+codex: prompt
 	@mkdir -p "$(dir $(CODEX_AGENTS_DEST))"
 	@ln -sfn "$(CODEX_AGENTS_SRC)" "$(CODEX_AGENTS_DEST)"
 	@echo "linked $(CODEX_AGENTS_DEST) -> $(CODEX_AGENTS_SRC)"
@@ -48,7 +48,7 @@ gitconfig:
 	@ln -sfn "$(GITCONFIG_SRC)" "$(GITCONFIG_DEST)"
 	@echo "linked $(GITCONFIG_DEST) -> $(GITCONFIG_SRC)"
 
-opencode: opencode-generate
+opencode: opencode-generate prompt
 	@mkdir -p "$(dir $(OPENCODE_CONFIG_DEST))"
 	@mkdir -p "$(OPENCODE_PLUGIN_DIR_DEST)"
 	@mkdir -p "$(dir $(OPENCODE_LOCAL_PLUGINS_DEST))"
@@ -69,3 +69,6 @@ opencode: opencode-generate
 
 opencode-generate:
 	@python3 "$(ROOT)/config/opencode/config-generator.py"
+
+prompt:
+	@python3 "$(ROOT)/config/prompt/prompt-generator.py"
