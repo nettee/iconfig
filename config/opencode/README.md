@@ -24,7 +24,7 @@ Supported fields:
 - `active_preset`: selects the generated `preset` in `oh-my-opencode-slim.jsonc`.
 - `chrome_devtools_mcp`: enables or disables the `chrome-devtools` MCP in both generated files.
 - `[opencode.models]`: OpenCode built-in Plan/Build agent model names generated into `opencode.jsonc`.
-- `[presets.default.models]`: baseline model names. This preset must define every agent.
+- `[presets.normal.models]`: baseline model names. This preset must define every agent.
 - `[presets.<name>.models]`: model overrides for a preset.
 - `[presets.<name>.variants]`: optional variant overrides for a preset.
 - `[council]`: Council runtime settings and councillor presets.
@@ -46,7 +46,7 @@ OMO Slim agents:
 - `fixer`
 - `council`
 
-`default` is the baseline preset. Other presets inherit from `default`, so they only need to list the values they change.
+`normal` is the baseline preset. Other presets inherit from `normal`, so they only need to list the values they change.
 
 `fast` is a speed-oriented preset for GPT agents.
 
@@ -66,7 +66,7 @@ make opencode
 
 `make opencode` runs the generator before linking files into `~/.config/opencode`.
 
-To switch the generated default preset, update `active_preset` and rerun `make opencode`.
+To switch the generated active preset, update `active_preset` and rerun `make opencode`.
 
 To override the preset only for one OpenCode launch, use OMO Slim's environment variable:
 

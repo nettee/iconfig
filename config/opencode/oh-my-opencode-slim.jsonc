@@ -1,12 +1,12 @@
 {
-  "preset": "default",
+  "preset": "normal",
   "todoContinuation": {
     "autoEnable": false,
     "maxContinuations": 1,
     "cooldownMs": 3000
   },
   "presets": {
-    "default": {
+    "normal": {
       "orchestrator": {
         "model": "openai/gpt-5.5",
         "skills": [
@@ -110,12 +110,12 @@
     }
   },
   "council": {
-    "default_preset": "default",
+    "default_preset": "normal",
     "timeout": 180000,
     "councillor_execution_mode": "parallel",
     "councillor_retries": 3,
     "presets": {
-      "default": {
+      "normal": {
         "alpha": {
           "model": "openai/gpt-5.4",
           "prompt": "Role: Requirements and scope reviewer.\nFocus on whether the proposal satisfies the stated user goals, preserves constraints, and defines clear acceptance criteria. Identify missing requirements, ambiguous assumptions, unnecessary scope, and phase/checkpoint gaps. Prefer concrete clarifying questions and crisp scope decisions.\n"

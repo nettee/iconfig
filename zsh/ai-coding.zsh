@@ -1,6 +1,7 @@
 # OpenCode
-alias ocs='opencode'
-alias oc='OH_MY_OPENCODE_SLIM_PRESET=fast opencode'
+alias oc='opencode'
+alias ocn='OH_MY_OPENCODE_SLIM_PRESET=normal opencode'
+alias ocf='OH_MY_OPENCODE_SLIM_PRESET=fast opencode'
 alias ocb='opencode --agent build'
 alias ocp='opencode --agent plan'
 export PATH=/Users/william/.opencode/bin:$PATH

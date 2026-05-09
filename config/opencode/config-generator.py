@@ -200,11 +200,11 @@ def build_agent_meta(models, variants):
     }
 
 
-def merge_preset(default_preset, preset):
-    models = dict(default_preset.get("models", {}))
+def merge_preset(base_preset, preset):
+    models = dict(base_preset.get("models", {}))
     models.update(preset.get("models", {}))
 
-    variants = dict(default_preset.get("variants", {}))
+    variants = dict(base_preset.get("variants", {}))
     variants.update(preset.get("variants", {}))
     return build_agent_meta(models, variants)
 
@@ -212,15 +212,15 @@ def merge_preset(default_preset, preset):
 def load_meta():
     meta = tomllib.loads(CONFIG_FILE.read_text(encoding="utf-8"))
     presets = meta.get("presets", {})
-    default_preset = presets.get("default")
+    base_preset = presets.get("normal")
 
-    if not default_preset:
-        raise SystemExit("missing required preset: default")
+    if not base_preset:
+        raise SystemExit("missing required preset: normal")
 
-    default_models = default_preset.get("models", {})
-    missing_agents = [name for name in AGENT_ORDER if name not in default_models]
+    base_models = base_preset.get("models", {})
+    missing_agents = [name for name in AGENT_ORDER if name not in base_models]
     if missing_agents:
-        raise SystemExit(f"missing default preset model: {', '.join(missing_agents)}")
+        raise SystemExit(f"missing normal preset model: {', '.join(missing_agents)}")
 
     opencode_models = meta.get("opencode", {}).get("models", {})
     missing_opencode_agents = [
@@ -231,12 +231,12 @@ def load_meta():
             f"missing opencode model: {', '.join(missing_opencode_agents)}"
         )
 
-    active_preset = meta.get("active_preset", "default")
+    active_preset = meta.get("active_preset", "normal")
     if active_preset not in presets:
         raise SystemExit(f"active preset not found: {active_preset}")
 
     resolved_presets = {
-        name: merge_preset(default_preset, preset)
+        name: merge_preset(base_preset, preset)
         for name, preset in presets.items()
     }
 
