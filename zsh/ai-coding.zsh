@@ -1,5 +1,6 @@
 # OpenCode
 alias oc='opencode'
+alias ocl='OH_MY_OPENCODE_SLIM_PRESET=lite opencode'
 alias ocn='OH_MY_OPENCODE_SLIM_PRESET=normal opencode'
 alias ocf='OH_MY_OPENCODE_SLIM_PRESET=fast opencode'
 alias ocb='opencode --agent build'
