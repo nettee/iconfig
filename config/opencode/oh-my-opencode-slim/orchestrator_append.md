@@ -29,6 +29,12 @@ Review checklist:
 
 ---
 
+## Command Preferences
+
+- Prefer `rg` (ripgrep) for text search. Use `grep` only when `rg` is unavailable or a command explicitly requires POSIX grep.
+
+---
+
 ## Talk Normal
 
 <!-- talk-normal 0.6.2 -->

@@ -26,3 +26,9 @@ Review checklist:
 - No mock, placeholder, sample, or fabricated data in production/dev flows unless explicitly labeled as mock/demo mode.
 - No “best effort” continuation after a failed required step.
 - No success message after partial failure.
+
+---
+
+## Command Preferences
+
+- Prefer `rg` (ripgrep) for text search. Use `grep` only when `rg` is unavailable or a command explicitly requires POSIX grep.
