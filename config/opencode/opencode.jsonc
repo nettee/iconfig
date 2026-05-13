@@ -30,6 +30,9 @@
     }
   },
   "provider": {
+    // Google Vertex AI uses ADC / GOOGLE_APPLICATION_CREDENTIALS + GOOGLE_CLOUD_PROJECT.
+    // We keep an explicit provider entry here so it is available in /models.
+    "vertexai": {},
     "kimi-for-coding": {
       "name": "Kimi For Coding",
       "npm": "@ai-sdk/anthropic",

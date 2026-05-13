@@ -7,8 +7,13 @@ alias ocb='opencode --agent build'
 alias ocp='opencode --agent plan'
 export PATH=/Users/william/.opencode/bin:$PATH
 
+# Google Vertex AI for OpenCode.
+# OpenCode reads Vertex auth from standard GCP env vars.
+export GOOGLE_APPLICATION_CREDENTIALS=/Users/william/.iconfig/refly-cloud-d78b83d1ba60.json
+export GOOGLE_CLOUD_PROJECT=refly-cloud
+export VERTEX_LOCATION=global
+
 # Claude Code
 alias cc='claude --plugin-dir /Users/william/projects/zest-dev/plugin'
 alias ccz='claude --plugin-dir /Users/william/projects/zest-dev/plugin'
 alias cczr='claude --plugin-dir /Users/william/projects/zest-dev/plugin --plugin-dir /Users/william/projects/vibe-coding/plugins/refly-dev'
-
