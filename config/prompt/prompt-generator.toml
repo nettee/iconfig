@@ -1,3 +1,6 @@
+[features]
+talk_normal = false
+
 [parts]
 let_it_crash_fast_fail = "parts/let_it_crash_fast_fail.md"
 talk_normal = "parts/talk_normal.md"
