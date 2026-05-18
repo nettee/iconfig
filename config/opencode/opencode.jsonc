@@ -3,7 +3,6 @@
     "oh-my-opencode-slim"
   ],
   "$schema": "https://opencode.ai/config.json",
-  "model": "openai/gpt-5.5",
   "experimental": {
     "disable_paste_summary": true
   },
