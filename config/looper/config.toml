@@ -1,0 +1,70 @@
+[agent]
+model = 'openai/gpt-5.4'
+vendor = 'opencode'
+
+[daemon]
+logDir = '/Users/william/.looper/logs'
+mode = 'foreground'
+shutdownTimeoutMs = 1000.0
+workingDirectory = '/Users/william/projects/looper'
+
+[defaults]
+allowAutoCommit = true
+allowAutoMerge = false
+allowAutoPush = true
+allowRiskyFixes = false
+baseBranch = 'main'
+openPrStrategy = 'all_done'
+
+[logging]
+level = 'info'
+maxFiles = 5.0
+maxSizeMB = 10.0
+
+[notifications]
+inApp = true
+
+[notifications.osascript]
+enabled = true
+soundForLevels = ['action_required', 'failure']
+throttleWindowSeconds = 60.0
+
+[package]
+autoMigrateOnStartup = true
+distribution = 'github-release'
+requireBackupBeforeMigrate = false
+
+[[projects]]
+id = 'open-design'
+name = 'open-design'
+repoPath = '/Users/william/projects/open-design'
+
+[projects.roles]
+[projects.roles.fixer]
+autoDiscovery = true
+
+[roles]
+[roles.fixer]
+autoDiscovery = true
+
+[roles.reviewer]
+[roles.reviewer.behavior]
+[roles.reviewer.behavior.reviewEvents]
+blocking = 'REQUEST_CHANGES'
+clean = 'APPROVE'
+
+[scheduler]
+maxConcurrentRuns = 3.0
+pollIntervalSeconds = 30.0
+retryBaseDelayMs = 5000.0
+retryMaxAttempts = 5.0
+
+[server]
+authMode = 'none'
+host = '127.0.0.1'
+port = 4310.0
+
+[storage]
+backupDir = '/Users/william/.looper/backups'
+dbPath = '/Users/william/.looper/looper.sqlite'
+mode = 'sqlite'

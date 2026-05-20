@@ -10,6 +10,7 @@
 - `config/p10k.zsh`
 - `config/ghostty/config`
 - `config/cmux/settings.json`
+- `config/looper/config.toml`
 - `config/codex/AGENTS.md`
 
 其他历史配置统一收敛到仓库根目录下的 `deprecated/`，一律视为 **deprecated**：
@@ -37,6 +38,12 @@
 - 仓库内文件：`config/cmux/settings.json`
 - 目标位置：`~/.config/cmux/settings.json`
 - 管理方式：通过 `make cmux` 创建软链接
+
+### looper
+
+- 仓库内文件：`config/looper/config.toml`
+- 目标位置：`~/.looper/config.toml`
+- 管理方式：通过 `make looper` 创建软链接
 
 ### codex
 
@@ -94,6 +101,7 @@
 
 - `make ghostty`
 - `make cmux`
+- `make looper`
 - `make codex`
 - `make p10k`
 - `make gitconfig`
