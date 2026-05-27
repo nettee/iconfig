@@ -3,7 +3,7 @@ model = 'gpt-5.4'
 vendor = 'codex'
 
 [agent.params]
-args = ['exec', '--sandbox', 'danger-full-access']
+args = ['exec', '-c', 'approval_policy="never"', '--sandbox', 'danger-full-access']
 
 [daemon]
 logDir = '/Users/william/.looper/logs'
