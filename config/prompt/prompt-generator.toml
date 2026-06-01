@@ -2,6 +2,7 @@
 talk_normal = false
 
 [parts]
+codex_subagent = "parts/codex_subagent.md"
 let_it_crash_fast_fail = "parts/let_it_crash_fast_fail.md"
 talk_normal = "parts/talk_normal.md"
 lsp_diagnostics_disabled = "parts/lsp_diagnostics_disabled.md"
@@ -10,6 +11,7 @@ command_preferences = "parts/command_preferences.md"
 [[targets]]
 path = "../codex/AGENTS.md"
 parts = [
+  "codex_subagent",
   "let_it_crash_fast_fail",
   "talk_normal",
 ]
