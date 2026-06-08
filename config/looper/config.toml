@@ -71,3 +71,10 @@ port = 4310.0
 backupDir = '/Users/william/.looper/backups'
 dbPath = '/Users/william/.looper/looper.sqlite'
 mode = 'sqlite'
+
+[webhook]
+enabled = true
+mode = "tunnel"
+listenPort = 8765
+publicBaseUrl = "https://looper.nettee.io"
+fallbackPollIntervalSeconds = 300
