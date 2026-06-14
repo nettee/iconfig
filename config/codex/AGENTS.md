@@ -57,3 +57,9 @@ Review checklist:
 - No mock, placeholder, sample, or fabricated data in production/dev flows unless explicitly labeled as mock/demo mode.
 - No “best effort” continuation after a failed required step.
 - No success message after partial failure.
+
+---
+
+## worktree-kit (wtk)
+
+If you see a WTK-AUXILIARY.md file in the repository root, read its contents and follow them.

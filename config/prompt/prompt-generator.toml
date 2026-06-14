@@ -7,12 +7,14 @@ let_it_crash_fast_fail = "parts/let_it_crash_fast_fail.md"
 talk_normal = "parts/talk_normal.md"
 lsp_diagnostics_disabled = "parts/lsp_diagnostics_disabled.md"
 command_preferences = "parts/command_preferences.md"
+worktree_kit = "parts/worktree_kit.md"
 
 [[targets]]
 path = "../codex/AGENTS.md"
 parts = [
   "codex_subagent",
   "let_it_crash_fast_fail",
+  "worktree_kit",
   "talk_normal",
 ]
 
@@ -21,6 +23,7 @@ path = "../opencode/oh-my-opencode-slim/orchestrator_append.md"
 parts = [
   "let_it_crash_fast_fail",
   "command_preferences",
+  "worktree_kit",
   "talk_normal",
 ]
 
