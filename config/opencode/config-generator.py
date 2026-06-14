@@ -22,6 +22,11 @@ OPENCODE_AGENT_ORDER = (
     "plan",
 )
 
+TMP_PERMISSION_PATHS = (
+    "/tmp/**",
+    "/private/tmp/**",
+)
+
 
 def write_json(path, data):
     path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
@@ -32,6 +37,10 @@ def chrome_devtools_mcp():
         "type": "local",
         "command": ["npx", "-y", "chrome-devtools-mcp@latest"],
     }
+
+
+def allow_paths(paths):
+    return {path: "allow" for path in paths}
 
 
 def agent_config(meta, skills, mcps, include_chrome=False):
@@ -69,15 +78,9 @@ def build_opencode_config(enable_chrome, opencode_models):
                 "terraform * plan*": "allow",
                 "terraform * validate*": "allow",
             },
-            "external_directory": {
-                "/tmp/**": "allow",
-            },
-            "read": {
-                "/tmp/**": "allow",
-            },
-            "edit": {
-                "/tmp/**": "allow",
-            },
+            "external_directory": allow_paths(TMP_PERMISSION_PATHS),
+            "read": allow_paths(TMP_PERMISSION_PATHS),
+            "edit": allow_paths(TMP_PERMISSION_PATHS),
         },
         "provider": {
             "kimi-for-coding": {
