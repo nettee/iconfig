@@ -77,6 +77,16 @@
 - `~/.config/opencode/oh-my-opencode-slim/oracle_append.md`
 - 管理方式：通过 `make opencode` 创建软链接
 
+#### 生成器约定
+
+- `config/opencode/opencode.jsonc` 和 `config/opencode/oh-my-opencode-slim.jsonc` 是由 `config/opencode/config-generator.py` 根据 `config/opencode/config-generator.toml` 生成的文件。
+  - 修改 active preset、模型映射、agent variant、Chrome DevTools MCP 开关、OpenCode 内置 build/plan agent、OMO Slim agent preset、Council 配置、或 `opencode.jsonc` 中由 generator 固化的稳定结构（例如 provider、permission、mcp、agent）时，必须改 generator 或 TOML，再运行 `make opencode` / `make opencode-generate`。
+  - 不要只手改这两个生成文件；如果 `make opencode` 后出现 diff，优先检查是否漏改了 generator / TOML。
+- `config/codex/AGENTS.md`、`config/opencode/oh-my-opencode-slim/orchestrator_append.md`、`config/opencode/oh-my-opencode-slim/oracle_append.md`、`config/opencode/oh-my-opencode-slim/fixer_append.md` 是由 `config/prompt/prompt-generator.py` 根据 `config/prompt/prompt-generator.toml` 和 `config/prompt/parts/*.md` 生成的文件。
+  - 修改公共提示词片段、Let It Crash / Fast Fail、命令偏好、worktree-kit 规则、Codex subagent 规则、或这些目标文件的片段组合/启停时，必须改 `config/prompt/parts/*.md` 或 `prompt-generator.toml`，再运行 `make opencode` / `make codex` / `make prompt`。
+  - 不要只手改这些生成目标；生成目标的内容应由 `parts` 和 TOML 维护。
+- 手工维护的 opencode 文件包括：`config/opencode/tui.jsonc`、`config/opencode/plugins/notification.js`。这些不走 generator。
+
 ### gitconfig
 
 - 仓库内文件：`config/git/config`
