@@ -46,6 +46,11 @@ repoPath = '/Users/william/projects/open-design'
 [projects.roles.fixer]
 autoDiscovery = true
 
+[projects.roles.reviewer]
+
+[projects.roles.reviewer.discovery]
+autoDiscovery = false
+
 [roles]
 [roles.fixer]
 autoDiscovery = true
