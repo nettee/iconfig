@@ -1,8 +1,10 @@
 ## Subagent Usage
 
-Use subagents mainly to keep the main context small and to parallelize research or exploration. Even generic Codex subagents are preferred for bounded research because they preserve the main session's context and can explore independently. Give them focused investigation tasks rather than assuming specialized roles.
+Use subagents aggressively for broad research/exploration so the main context stays small. Give each subagent a focused task and expected summary.
 
-Default rule: do not do broad research or broad exploration in the main session first. If the task involves unfamiliar code, unknown files, external documentation, APIs, errors, logs, or dependencies, delegate a bounded read-only investigation to a subagent first, then integrate the result yourself.
+Default: if the task involves unfamiliar code, unknown files, docs, APIs, errors, logs, or dependencies, delegate a bounded read-only investigation first.
+
+After launching a subagent, do not duplicate its scope in the main session. Work only on independent tasks; otherwise wait. For multiple gaps, dispatch multiple subagents instead of researching serially yourself.
 
 Recommended uses:
 
