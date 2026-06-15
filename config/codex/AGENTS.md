@@ -36,6 +36,7 @@ This project values observable failure during development.
 Rules:
 - Surface failures as early as possible.
 - Fail fast on invalid state, missing config, bad inputs, failed subprocesses, failed network calls, and violated invariants.
+- Do not let non-critical logging, telemetry, diagnostics, tracing, metrics, debug capture, or observability failures block required business functionality.
 - When required input, configuration, credentials, files, API responses, or user-provided data are missing, fail immediately with a clear error. Do not substitute mock data, placeholder values, sample fixtures, empty objects, default IDs, or fabricated responses unless the user explicitly requests a mock/demo mode.
 - Prefer explicit errors, failed tests, assertions, and clear diagnostics over fallback behavior.
 - Catch only exceptions that have a specific recovery path.
