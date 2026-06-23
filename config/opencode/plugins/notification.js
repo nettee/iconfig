@@ -52,8 +52,9 @@ export const NotificationPlugin = async ({ project, $, directory, client }) => {
     rootSessionCache.set(sessionID, !getSessionParentID(info))
   }
 
-  const getSessionStatus = (event) => {
-    return event?.properties?.status || event?.status
+  const getSessionStatusType = (event) => {
+    const status = event?.properties?.status || event?.status
+    return typeof status === "string" ? status : status?.type
   }
 
   const isRootSessionEvent = async (event) => {
@@ -106,7 +107,7 @@ export const NotificationPlugin = async ({ project, $, directory, client }) => {
 
       if (event.type === "session.status") {
         const sessionID = getSessionID(event)
-        const status = getSessionStatus(event)
+        const status = getSessionStatusType(event)
 
         if (sessionID && status) {
           sessionStatusCache.set(sessionID, status)
@@ -114,8 +115,9 @@ export const NotificationPlugin = async ({ project, $, directory, client }) => {
       }
 
       const isPromptEvent = promptEventTypes.has(event.type)
+      const isSessionlessPromptEvent = isPromptEvent && !getSessionID(event)
 
-      if (!(await isRootSessionEvent(event))) {
+      if (!isSessionlessPromptEvent && !(await isRootSessionEvent(event))) {
         return
       }
 
@@ -126,7 +128,7 @@ export const NotificationPlugin = async ({ project, $, directory, client }) => {
         })
       }
 
-      if (event.type === "session.status" && getSessionStatus(event) === "idle") {
+      if (event.type === "session.status" && getSessionStatusType(event) === "idle") {
         const sessionID = getSessionID(event)
 
         await new Promise((resolve) => setTimeout(resolve, 1500))
@@ -144,7 +146,7 @@ export const NotificationPlugin = async ({ project, $, directory, client }) => {
       if (event.type === "session.error") {
         await notify({
           subtitle: "Error",
-          message: event.error?.message || `Session error · ${dirName}`,
+          message: event.properties?.error?.message || `Session error · ${dirName}`,
         })
       }
     },
