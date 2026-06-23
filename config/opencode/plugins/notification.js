@@ -5,6 +5,7 @@ export const NotificationPlugin = async ({ project, $, directory, client }) => {
   const dirName = path.basename(directory)
   const title = projectName || `opencode · ${dirName}`
   const rootSessionCache = new Map()
+  const sessionStatusCache = new Map()
 
   const notify = async ({ subtitle, message }) => {
     try {
@@ -17,32 +18,69 @@ export const NotificationPlugin = async ({ project, $, directory, client }) => {
   const getSessionID = (event) => {
     return (
       event?.properties?.sessionID ||
+      event?.properties?.sessionId ||
       event?.properties?.info?.id ||
       event?.sessionID ||
+      event?.sessionId ||
       event?.session_id
     )
+  }
+
+  const getSessionInfo = (event) => {
+    return event?.properties?.info || event?.info || event?.session
+  }
+
+  const getSessionParentID = (session) => {
+    return (
+      session?.parentID ||
+      session?.parentId ||
+      session?.parent_id ||
+      session?.data?.parentID ||
+      session?.data?.parentId ||
+      session?.data?.parent_id
+    )
+  }
+
+  const rememberSession = (event) => {
+    const info = getSessionInfo(event)
+    const sessionID = getSessionID(event) || info?.id
+
+    if (!sessionID || !info) {
+      return
+    }
+
+    rootSessionCache.set(sessionID, !getSessionParentID(info))
+  }
+
+  const getSessionStatus = (event) => {
+    return event?.properties?.status || event?.status
   }
 
   const isRootSessionEvent = async (event) => {
     const sessionID = getSessionID(event)
 
-    if (!sessionID || !client?.session?.get) {
-      return true
+    if (!sessionID) {
+      return false
     }
 
     if (rootSessionCache.has(sessionID)) {
       return rootSessionCache.get(sessionID)
     }
 
+    if (!client?.session?.get) {
+      return false
+    }
+
     try {
       const session = await client.session.get({
         path: { id: sessionID },
       })
-      const isRoot = !session?.data?.parentID
+      const isRoot = !getSessionParentID(session)
       rootSessionCache.set(sessionID, isRoot)
       return isRoot
-    } catch {
-      return true
+    } catch (error) {
+      console.warn("opencode notification: unable to resolve session parent", error)
+      return false
     }
   }
 
@@ -62,9 +100,22 @@ export const NotificationPlugin = async ({ project, $, directory, client }) => {
 
   return {
     event: async ({ event }) => {
+      if (event.type === "session.created" || event.type === "session.updated") {
+        rememberSession(event)
+      }
+
+      if (event.type === "session.status") {
+        const sessionID = getSessionID(event)
+        const status = getSessionStatus(event)
+
+        if (sessionID && status) {
+          sessionStatusCache.set(sessionID, status)
+        }
+      }
+
       const isPromptEvent = promptEventTypes.has(event.type)
 
-      if (!isPromptEvent && !(await isRootSessionEvent(event))) {
+      if (!(await isRootSessionEvent(event))) {
         return
       }
 
@@ -75,7 +126,15 @@ export const NotificationPlugin = async ({ project, $, directory, client }) => {
         })
       }
 
-      if (event.type === "session.idle") {
+      if (event.type === "session.status" && getSessionStatus(event) === "idle") {
+        const sessionID = getSessionID(event)
+
+        await new Promise((resolve) => setTimeout(resolve, 1500))
+
+        if (sessionID && sessionStatusCache.get(sessionID) !== "idle") {
+          return
+        }
+
         await notify({
           subtitle: "Waiting for input",
           message: `Agent finished responding · ${dirName}`,
