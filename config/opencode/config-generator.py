@@ -27,6 +27,10 @@ TMP_PERMISSION_PATHS = (
     "/private/tmp/**",
 )
 
+READ_ONLY_PERMISSION_PATHS = (
+    "~/Downloads/**",
+)
+
 
 def write_json(path, data):
     path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
@@ -78,8 +82,10 @@ def build_opencode_config(enable_chrome, opencode_models):
                 "terraform * plan*": "allow",
                 "terraform * validate*": "allow",
             },
-            "external_directory": allow_paths(TMP_PERMISSION_PATHS),
-            "read": allow_paths(TMP_PERMISSION_PATHS),
+            "external_directory": allow_paths(
+                TMP_PERMISSION_PATHS + READ_ONLY_PERMISSION_PATHS
+            ),
+            "read": allow_paths(TMP_PERMISSION_PATHS + READ_ONLY_PERMISSION_PATHS),
             "edit": allow_paths(TMP_PERMISSION_PATHS),
         },
         "provider": {

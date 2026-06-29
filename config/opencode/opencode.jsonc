@@ -21,11 +21,13 @@
     },
     "external_directory": {
       "/tmp/**": "allow",
-      "/private/tmp/**": "allow"
+      "/private/tmp/**": "allow",
+      "~/Downloads/**": "allow"
     },
     "read": {
       "/tmp/**": "allow",
-      "/private/tmp/**": "allow"
+      "/private/tmp/**": "allow",
+      "~/Downloads/**": "allow"
     },
     "edit": {
       "/tmp/**": "allow",
