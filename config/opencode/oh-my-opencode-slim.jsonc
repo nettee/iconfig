@@ -10,7 +10,8 @@
       "orchestrator": {
         "model": "openai/gpt-5.5",
         "skills": [
-          "*"
+          "*",
+          "!worktrees"
         ],
         "mcps": [
           "websearch"
@@ -61,7 +62,8 @@
       "orchestrator": {
         "model": "openai/gpt-5.4",
         "skills": [
-          "*"
+          "*",
+          "!worktrees"
         ],
         "mcps": [
           "websearch"
@@ -112,7 +114,8 @@
       "orchestrator": {
         "model": "openai/gpt-5.5-fast",
         "skills": [
-          "*"
+          "*",
+          "!worktrees"
         ],
         "mcps": [
           "websearch"

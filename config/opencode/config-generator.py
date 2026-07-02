@@ -140,7 +140,7 @@ def build_preset_config(agents, enable_chrome):
     return {
         "orchestrator": agent_config(
             agents["orchestrator"],
-            skills=["*"],
+            skills=["*", "!worktrees"],
             mcps=["websearch"],
             include_chrome=enable_chrome,
         ),
