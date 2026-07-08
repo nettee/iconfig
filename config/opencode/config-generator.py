@@ -29,6 +29,7 @@ TMP_PERMISSION_PATHS = (
 
 READ_ONLY_PERMISSION_PATHS = (
     "~/Downloads/**",
+    "~/Desktop/**",
 )
 
 

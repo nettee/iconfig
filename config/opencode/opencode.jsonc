@@ -22,12 +22,14 @@
     "external_directory": {
       "/tmp/**": "allow",
       "/private/tmp/**": "allow",
-      "~/Downloads/**": "allow"
+      "~/Downloads/**": "allow",
+      "~/Desktop/**": "allow"
     },
     "read": {
       "/tmp/**": "allow",
       "/private/tmp/**": "allow",
-      "~/Downloads/**": "allow"
+      "~/Downloads/**": "allow",
+      "~/Desktop/**": "allow"
     },
     "edit": {
       "/tmp/**": "allow",
