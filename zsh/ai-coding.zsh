@@ -9,7 +9,7 @@ export PATH=/Users/william/.opencode/bin:$PATH
 
 # Codex
 alias cx='codex'
-alias ca='codex app'
+alias ca='open -a "ChatGPT"'
 
 # Google Vertex AI for OpenCode.
 # OpenCode reads Vertex auth from standard GCP env vars.
