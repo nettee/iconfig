@@ -216,7 +216,10 @@
     },
     "fast": {
       "orchestrator": {
-        "model": "openai/gpt-5.5-fast",
+        "model": "openai/gpt-5.6-sol",
+        "options": {
+          "serviceTier": "priority"
+        },
         "skills": [
           "*",
           "!worktrees"
@@ -226,13 +229,16 @@
         ]
       },
       "oracle": {
-        "model": "openai/gpt-5.5-fast",
-        "variant": "medium",
+        "model": "openai/gpt-5.6-sol",
+        "variant": "high",
+        "options": {
+          "serviceTier": "priority"
+        },
         "skills": [],
         "mcps": []
       },
       "librarian": {
-        "model": "openai/gpt-5.4-mini",
+        "model": "opencode-go/deepseek-v4-flash",
         "skills": [],
         "mcps": [
           "websearch",
@@ -241,27 +247,36 @@
         ]
       },
       "explorer": {
-        "model": "openai/gpt-5.4-mini",
+        "model": "opencode-go/deepseek-v4-flash",
         "skills": [],
         "mcps": []
       },
       "designer": {
-        "model": "openai/gpt-5.5-fast",
+        "model": "openai/gpt-5.6-sol",
         "variant": "medium",
+        "options": {
+          "serviceTier": "priority"
+        },
         "skills": [
           "agent-browser"
         ],
         "mcps": []
       },
       "fixer": {
-        "model": "openai/gpt-5.5-fast",
+        "model": "openai/gpt-5.6-terra",
         "variant": "low",
+        "options": {
+          "serviceTier": "priority"
+        },
         "skills": [],
         "mcps": []
       },
       "council": {
-        "model": "openai/gpt-5.5-fast",
+        "model": "openai/gpt-5.6-sol",
         "variant": "medium",
+        "options": {
+          "serviceTier": "priority"
+        },
         "skills": [],
         "mcps": []
       }

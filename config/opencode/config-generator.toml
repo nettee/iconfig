@@ -64,19 +64,26 @@ fixer = "low"
 council = "high"
 
 [presets.fast.models]
-orchestrator = "openai/gpt-5.5-fast"
-oracle = "openai/gpt-5.5-fast"
-designer = "openai/gpt-5.5-fast"
-fixer = "openai/gpt-5.5-fast"
-council = "openai/gpt-5.5-fast"
-explorer = "openai/gpt-5.4-mini"
-librarian = "openai/gpt-5.4-mini"
+orchestrator = "openai/gpt-5.6-sol"
+oracle = "openai/gpt-5.6-sol"
+designer = "openai/gpt-5.6-sol"
+fixer = "openai/gpt-5.6-terra"
+council = "openai/gpt-5.6-sol"
+librarian = "opencode-go/deepseek-v4-flash"
+explorer = "opencode-go/deepseek-v4-flash"
 
 [presets.fast.variants]
-oracle = "medium"
+oracle = "high"
 designer = "medium"
 fixer = "low"
 council = "medium"
+
+[presets.fast.agent_options]
+orchestrator = { serviceTier = "priority" }
+oracle = { serviceTier = "priority" }
+designer = { serviceTier = "priority" }
+fixer = { serviceTier = "priority" }
+council = { serviceTier = "priority" }
 
 [council]
 default_preset = "normal"

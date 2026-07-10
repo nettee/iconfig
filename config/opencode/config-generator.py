@@ -54,6 +54,9 @@ def agent_config(meta, skills, mcps, include_chrome=False):
     if "variant" in meta:
         config["variant"] = meta["variant"]
 
+    if "options" in meta:
+        config["options"] = meta["options"]
+
     config["skills"] = skills
     config["mcps"] = mcps + (["chrome-devtools"] if include_chrome else [])
     return config
@@ -200,23 +203,63 @@ def build_plugin_config(active_preset, presets, council, enable_chrome):
     return config
 
 
-def build_agent_meta(models, variants):
+def build_agent_meta(models, variants, agent_options):
     return {
         name: {
             "model": models[name],
             **({"variant": variants[name]} if name in variants else {}),
+            **({"options": agent_options[name]} if name in agent_options else {}),
         }
         for name in AGENT_ORDER
     }
 
 
-def merge_preset(base_preset, preset):
+def validate_agent_options(preset_name, agent_options):
+    if not isinstance(agent_options, dict):
+        raise SystemExit(f"invalid agent_options for preset {preset_name}: expected table")
+
+    unknown_agents = set(agent_options) - set(AGENT_ORDER)
+    if unknown_agents:
+        raise SystemExit(
+            f"invalid agent_options for preset {preset_name}: unknown agent(s): "
+            f"{', '.join(sorted(unknown_agents))}"
+        )
+
+    for agent, options in agent_options.items():
+        if not isinstance(options, dict):
+            raise SystemExit(
+                f"invalid agent_options for preset {preset_name}.{agent}: expected table"
+            )
+
+    try:
+        json.dumps(agent_options)
+    except (TypeError, ValueError) as error:
+        raise SystemExit(
+            f"invalid agent_options for preset {preset_name}: not JSON serializable: {error}"
+        ) from error
+
+    return agent_options
+
+
+def merge_preset(base_preset, preset, preset_name):
     models = dict(base_preset.get("models", {}))
     models.update(preset.get("models", {}))
 
     variants = dict(base_preset.get("variants", {}))
     variants.update(preset.get("variants", {}))
-    return build_agent_meta(models, variants)
+
+    agent_options = {
+        agent: dict(options)
+        for agent, options in validate_agent_options(
+            "normal", base_preset.get("agent_options", {})
+        ).items()
+    }
+    for agent, options in validate_agent_options(
+        preset_name, preset.get("agent_options", {})
+    ).items():
+        agent_options.setdefault(agent, {}).update(options)
+
+    return build_agent_meta(models, variants, agent_options)
 
 
 def load_meta():
@@ -246,7 +289,7 @@ def load_meta():
         raise SystemExit(f"active preset not found: {active_preset}")
 
     resolved_presets = {
-        name: merge_preset(base_preset, preset)
+        name: merge_preset(base_preset, preset, name)
         for name, preset in presets.items()
     }
 
