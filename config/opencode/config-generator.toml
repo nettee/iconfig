@@ -1,4 +1,4 @@
-active_preset = "lite"
+active_preset = "normal"
 chrome_devtools_mcp = false
 
 [opencode.models]
@@ -6,6 +6,21 @@ build = "openai/gpt-5.5"
 plan = "openai/gpt-5.5"
 
 [presets.normal.models]
+orchestrator = "openai/gpt-5.6-sol"
+oracle = "openai/gpt-5.6-sol"
+fixer = "openai/gpt-5.6-terra"
+council = "openai/gpt-5.6-sol"
+designer = "opencode-go/kimi-k2.7-code"
+librarian = "opencode-go/deepseek-v4-flash"
+explorer = "opencode-go/deepseek-v4-flash"
+
+[presets.normal.variants]
+oracle = "high"
+fixer = "low"
+council = "medium"
+designer = "medium"
+
+[presets.backup.models]
 orchestrator = "openai/gpt-5.5"
 oracle = "openai/gpt-5.5"
 designer = "openai/gpt-5.5"
@@ -14,7 +29,7 @@ council = "openai/gpt-5.5"
 explorer = "openai/gpt-5.4-mini"
 librarian = "openai/gpt-5.4-mini"
 
-[presets.normal.variants]
+[presets.backup.variants]
 oracle = "high"
 designer = "high"
 fixer = "low"
