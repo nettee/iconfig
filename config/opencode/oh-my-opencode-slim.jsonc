@@ -216,10 +216,7 @@
     },
     "fast": {
       "orchestrator": {
-        "model": "openai/gpt-5.6-sol",
-        "options": {
-          "serviceTier": "priority"
-        },
+        "model": "openai/gpt-5.6-sol-fast",
         "skills": [
           "*",
           "!worktrees"
@@ -229,11 +226,8 @@
         ]
       },
       "oracle": {
-        "model": "openai/gpt-5.6-sol",
+        "model": "openai/gpt-5.6-sol-fast",
         "variant": "high",
-        "options": {
-          "serviceTier": "priority"
-        },
         "skills": [],
         "mcps": []
       },
@@ -252,31 +246,22 @@
         "mcps": []
       },
       "designer": {
-        "model": "openai/gpt-5.6-sol",
+        "model": "openai/gpt-5.6-sol-fast",
         "variant": "medium",
-        "options": {
-          "serviceTier": "priority"
-        },
         "skills": [
           "agent-browser"
         ],
         "mcps": []
       },
       "fixer": {
-        "model": "openai/gpt-5.6-terra",
+        "model": "openai/gpt-5.6-terra-fast",
         "variant": "low",
-        "options": {
-          "serviceTier": "priority"
-        },
         "skills": [],
         "mcps": []
       },
       "council": {
-        "model": "openai/gpt-5.6-sol",
+        "model": "openai/gpt-5.6-sol-fast",
         "variant": "medium",
-        "options": {
-          "serviceTier": "priority"
-        },
         "skills": [],
         "mcps": []
       }
