@@ -11,6 +11,11 @@ export PATH=/Users/william/.opencode/bin:$PATH
 alias cx='codex'
 alias ca='open -a "ChatGPT"'
 
+# Cursor
+alias csc='cursor --classic'
+alias csg='cursor --glass'
+alias csa='agent'
+
 # Google Vertex AI for OpenCode.
 # OpenCode reads Vertex auth from standard GCP env vars.
 export GOOGLE_APPLICATION_CREDENTIALS=/Users/william/.iconfig/refly-cloud-d78b83d1ba60.json
