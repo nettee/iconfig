@@ -1,9 +1,9 @@
 [agent]
-model = 'gpt-5.4'
+model = 'gpt-5.6-terra'
 vendor = 'codex'
 
 [agent.params]
-args = ['exec', '-c', 'approval_policy="never"', '--sandbox', 'danger-full-access']
+args = ['exec', '-c', 'approval_policy="never"', '--sandbox', 'danger-full-access', '-c', 'model_reasoning_effort="high"']
 
 [daemon]
 logDir = '/Users/william/.looper/logs'
