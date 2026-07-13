@@ -16,7 +16,7 @@ explorer = "opencode-go/deepseek-v4-flash"
 
 [presets.normal.variants]
 oracle = "high"
-fixer = "low"
+fixer = "medium"
 council = "medium"
 designer = "medium"
 
@@ -35,33 +35,20 @@ designer = "high"
 fixer = "low"
 council = "medium"
 
-[presets.go.models]
-orchestrator = "openai/gpt-5.5"
-oracle = "openai/gpt-5.5"
-fixer = "openai/gpt-5.5"
-council = "openai/gpt-5.5"
-designer = "opencode-go/kimi-k2.7-code"
+[presets.lite.models]
+orchestrator = "openai/gpt-5.6-terra"
+oracle = "openai/gpt-5.6-terra"
+designer = "openai/gpt-5.6-terra"
+fixer = "openai/gpt-5.6-terra"
+council = "openai/gpt-5.6-terra"
 librarian = "opencode-go/deepseek-v4-flash"
 explorer = "opencode-go/deepseek-v4-flash"
 
-[presets.go.variants]
-oracle = "high"
-fixer = "low"
-council = "medium"
-designer = "medium"
-
-[presets.lite.models]
-orchestrator = "openai/gpt-5.4"
-oracle = "openai/gpt-5.4"
-designer = "openai/gpt-5.4"
-fixer = "openai/gpt-5.4"
-council = "openai/gpt-5.4"
-
 [presets.lite.variants]
 oracle = "high"
-designer = "high"
+designer = "medium"
 fixer = "low"
-council = "high"
+council = "medium"
 
 [presets.fast.models]
 orchestrator = "openai/gpt-5.6-sol-fast"

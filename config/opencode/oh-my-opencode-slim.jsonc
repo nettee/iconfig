@@ -47,7 +47,7 @@
       },
       "fixer": {
         "model": "openai/gpt-5.6-terra",
-        "variant": "low",
+        "variant": "medium",
         "skills": [],
         "mcps": []
       },
@@ -110,61 +110,9 @@
         "mcps": []
       }
     },
-    "go": {
-      "orchestrator": {
-        "model": "openai/gpt-5.5",
-        "skills": [
-          "*",
-          "!worktrees"
-        ],
-        "mcps": [
-          "websearch"
-        ]
-      },
-      "oracle": {
-        "model": "openai/gpt-5.5",
-        "variant": "high",
-        "skills": [],
-        "mcps": []
-      },
-      "librarian": {
-        "model": "opencode-go/deepseek-v4-flash",
-        "skills": [],
-        "mcps": [
-          "websearch",
-          "context7",
-          "grep_app"
-        ]
-      },
-      "explorer": {
-        "model": "opencode-go/deepseek-v4-flash",
-        "skills": [],
-        "mcps": []
-      },
-      "designer": {
-        "model": "opencode-go/kimi-k2.7-code",
-        "variant": "medium",
-        "skills": [
-          "agent-browser"
-        ],
-        "mcps": []
-      },
-      "fixer": {
-        "model": "openai/gpt-5.5",
-        "variant": "low",
-        "skills": [],
-        "mcps": []
-      },
-      "council": {
-        "model": "openai/gpt-5.5",
-        "variant": "medium",
-        "skills": [],
-        "mcps": []
-      }
-    },
     "lite": {
       "orchestrator": {
-        "model": "openai/gpt-5.4",
+        "model": "openai/gpt-5.6-terra",
         "skills": [
           "*",
           "!worktrees"
@@ -174,7 +122,7 @@
         ]
       },
       "oracle": {
-        "model": "openai/gpt-5.4",
+        "model": "openai/gpt-5.6-terra",
         "variant": "high",
         "skills": [],
         "mcps": []
@@ -194,22 +142,22 @@
         "mcps": []
       },
       "designer": {
-        "model": "openai/gpt-5.4",
-        "variant": "high",
+        "model": "openai/gpt-5.6-terra",
+        "variant": "medium",
         "skills": [
           "agent-browser"
         ],
         "mcps": []
       },
       "fixer": {
-        "model": "openai/gpt-5.4",
+        "model": "openai/gpt-5.6-terra",
         "variant": "low",
         "skills": [],
         "mcps": []
       },
       "council": {
-        "model": "openai/gpt-5.4",
-        "variant": "high",
+        "model": "openai/gpt-5.6-terra",
+        "variant": "medium",
         "skills": [],
         "mcps": []
       }
