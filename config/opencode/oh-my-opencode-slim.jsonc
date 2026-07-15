@@ -8,110 +8,6 @@
   "presets": {
     "normal": {
       "orchestrator": {
-        "model": "openai/gpt-5.6-sol",
-        "skills": [
-          "*",
-          "!worktrees"
-        ],
-        "mcps": [
-          "websearch"
-        ]
-      },
-      "oracle": {
-        "model": "openai/gpt-5.6-sol",
-        "variant": "high",
-        "skills": [],
-        "mcps": []
-      },
-      "librarian": {
-        "model": "opencode-go/deepseek-v4-flash",
-        "skills": [],
-        "mcps": [
-          "websearch",
-          "context7",
-          "grep_app"
-        ]
-      },
-      "explorer": {
-        "model": "opencode-go/deepseek-v4-flash",
-        "skills": [],
-        "mcps": []
-      },
-      "designer": {
-        "model": "opencode-go/kimi-k2.7-code",
-        "variant": "medium",
-        "skills": [
-          "agent-browser"
-        ],
-        "mcps": []
-      },
-      "fixer": {
-        "model": "openai/gpt-5.6-terra",
-        "variant": "low",
-        "skills": [],
-        "mcps": []
-      },
-      "council": {
-        "model": "openai/gpt-5.6-sol",
-        "variant": "medium",
-        "skills": [],
-        "mcps": []
-      }
-    },
-    "backup": {
-      "orchestrator": {
-        "model": "openai/gpt-5.5",
-        "skills": [
-          "*",
-          "!worktrees"
-        ],
-        "mcps": [
-          "websearch"
-        ]
-      },
-      "oracle": {
-        "model": "openai/gpt-5.5",
-        "variant": "high",
-        "skills": [],
-        "mcps": []
-      },
-      "librarian": {
-        "model": "openai/gpt-5.4-mini",
-        "skills": [],
-        "mcps": [
-          "websearch",
-          "context7",
-          "grep_app"
-        ]
-      },
-      "explorer": {
-        "model": "openai/gpt-5.4-mini",
-        "skills": [],
-        "mcps": []
-      },
-      "designer": {
-        "model": "openai/gpt-5.5",
-        "variant": "high",
-        "skills": [
-          "agent-browser"
-        ],
-        "mcps": []
-      },
-      "fixer": {
-        "model": "openai/gpt-5.5",
-        "variant": "low",
-        "skills": [],
-        "mcps": []
-      },
-      "council": {
-        "model": "openai/gpt-5.5",
-        "variant": "medium",
-        "skills": [],
-        "mcps": []
-      }
-    },
-    "go": {
-      "orchestrator": {
         "model": "openai/gpt-5.5",
         "skills": [
           "*",
@@ -142,7 +38,7 @@
         "mcps": []
       },
       "designer": {
-        "model": "opencode-go/kimi-k2.7-code",
+        "model": "openai/gpt-5.5",
         "variant": "medium",
         "skills": [
           "agent-browser"
@@ -157,7 +53,7 @@
       },
       "council": {
         "model": "openai/gpt-5.5",
-        "variant": "medium",
+        "variant": "high",
         "skills": [],
         "mcps": []
       }
@@ -195,7 +91,7 @@
       },
       "designer": {
         "model": "openai/gpt-5.4",
-        "variant": "high",
+        "variant": "medium",
         "skills": [
           "agent-browser"
         ],
@@ -216,7 +112,7 @@
     },
     "fast": {
       "orchestrator": {
-        "model": "openai/gpt-5.6-sol-fast",
+        "model": "openai/gpt-5.5-fast",
         "skills": [
           "*",
           "!worktrees"
@@ -226,7 +122,7 @@
         ]
       },
       "oracle": {
-        "model": "openai/gpt-5.6-sol-fast",
+        "model": "openai/gpt-5.5-fast",
         "variant": "high",
         "skills": [],
         "mcps": []
@@ -246,7 +142,7 @@
         "mcps": []
       },
       "designer": {
-        "model": "openai/gpt-5.6-sol-fast",
+        "model": "openai/gpt-5.5-fast",
         "variant": "medium",
         "skills": [
           "agent-browser"
@@ -254,13 +150,13 @@
         "mcps": []
       },
       "fixer": {
-        "model": "openai/gpt-5.6-terra-fast",
+        "model": "openai/gpt-5.5-fast",
         "variant": "low",
         "skills": [],
         "mcps": []
       },
       "council": {
-        "model": "openai/gpt-5.6-sol-fast",
+        "model": "openai/gpt-5.5-fast",
         "variant": "medium",
         "skills": [],
         "mcps": []
