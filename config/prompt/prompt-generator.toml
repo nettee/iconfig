@@ -12,7 +12,6 @@ worktree_kit = "parts/worktree_kit.md"
 [[targets]]
 path = "../codex/AGENTS.md"
 parts = [
-  "codex_subagent",
   "let_it_crash_fast_fail",
   "worktree_kit",
   "talk_normal",
