@@ -42,6 +42,11 @@ id = 'open-design'
 name = 'open-design'
 repoPath = '/Users/william/projects/open-design'
 
+[[projects]]
+id = 'vela'
+name = 'vela'
+repoPath = '/Users/william/projects/vela'
+
 [projects.roles]
 [projects.roles.fixer]
 autoDiscovery = true
