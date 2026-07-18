@@ -24,7 +24,7 @@
         "mcps": []
       },
       "librarian": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "openai/gpt-5.4-mini",
         "skills": [],
         "mcps": [
           "websearch",
@@ -33,7 +33,7 @@
         ]
       },
       "explorer": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "openai/gpt-5.4-mini",
         "skills": [],
         "mcps": []
       },
@@ -76,7 +76,7 @@
         "mcps": []
       },
       "librarian": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "openai/gpt-5.4-mini",
         "skills": [],
         "mcps": [
           "websearch",
@@ -85,7 +85,7 @@
         ]
       },
       "explorer": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "openai/gpt-5.4-mini",
         "skills": [],
         "mcps": []
       },
@@ -128,7 +128,7 @@
         "mcps": []
       },
       "librarian": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "openai/gpt-5.4-mini",
         "skills": [],
         "mcps": [
           "websearch",
@@ -137,7 +137,7 @@
         ]
       },
       "explorer": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "openai/gpt-5.4-mini",
         "skills": [],
         "mcps": []
       },
