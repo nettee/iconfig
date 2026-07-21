@@ -65,7 +65,7 @@ def build_opencode_config(enable_chrome, opencode_models):
         mcp["chrome-devtools"] = chrome_devtools_mcp()
 
     return {
-        "plugin": ["oh-my-opencode-slim"],
+        "plugin": ["oh-my-opencode-slim@2.2.2"],
         "$schema": "https://opencode.ai/config.json",
         "experimental": {
             "disable_paste_summary": True,
@@ -183,6 +183,7 @@ def build_preset_config(agents, enable_chrome):
 def build_plugin_config(active_preset, presets, council, enable_chrome):
     config = {
         "preset": active_preset,
+        "autoUpdate": False,
         "todoContinuation": {
             "autoEnable": False,
             "maxContinuations": 1,
