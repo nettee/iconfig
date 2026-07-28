@@ -1,6 +1,6 @@
 # OpenCode
 alias oc='OH_MY_OPENCODE_SLIM_PRESET=normal opencode'
-alias ocg='OH_MY_OPENCODE_SLIM_PRESET=go opencode'
+alias ocg='OH_MY_OPENCODE_SLIM_PRESET=good opencode'
 alias ocl='OH_MY_OPENCODE_SLIM_PRESET=lite opencode'
 alias ocn='OH_MY_OPENCODE_SLIM_PRESET=normal opencode'
 alias ocb='OH_MY_OPENCODE_SLIM_PRESET=backup opencode'
