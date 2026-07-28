@@ -83,3 +83,7 @@ mode = "tunnel"
 listenPort = 8765
 publicBaseUrl = "https://looper.nettee.io"
 fallbackPollIntervalSeconds = 300
+
+[tools]
+looperPath = "/Users/william/.looper/bin/looper-review-child"
+
