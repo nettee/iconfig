@@ -6,6 +6,8 @@ CMUX_SRC := $(ROOT)/config/cmux/settings.json
 CMUX_DEST := $(HOME)/.config/cmux/settings.json
 LOOPER_SRC := $(ROOT)/config/looper/config.toml
 LOOPER_DEST := $(HOME)/.looper/config.toml
+HERDR_SRC := $(ROOT)/config/herdr/config.toml
+HERDR_DEST := $(HOME)/.config/herdr/config.toml
 CODEX_AGENTS_SRC := $(ROOT)/config/codex/AGENTS.md
 CODEX_AGENTS_DEST := $(HOME)/.codex/AGENTS.md
 P10K_SRC := $(ROOT)/config/p10k.zsh
@@ -23,9 +25,9 @@ OPENCODE_PLUGIN_DIR_DEST := $(HOME)/.config/opencode/oh-my-opencode-slim
 OPENCODE_LOCAL_PLUGINS_SRC := $(ROOT)/config/opencode/plugins
 OPENCODE_LOCAL_PLUGINS_DEST := $(HOME)/.config/opencode/plugins
 
-.PHONY: all ghostty cmux looper codex p10k gitconfig opencode opencode-generate prompt
+.PHONY: all ghostty cmux looper herdr codex p10k gitconfig opencode opencode-generate prompt
 
-all: ghostty cmux looper codex p10k gitconfig opencode
+all: ghostty cmux looper herdr codex p10k gitconfig opencode
 
 ghostty:
 	@mkdir -p "$(dir $(GHOSTTY_DEST))"
@@ -41,6 +43,11 @@ looper:
 	@mkdir -p "$(dir $(LOOPER_DEST))"
 	@ln -sfn "$(LOOPER_SRC)" "$(LOOPER_DEST)"
 	@echo "linked $(LOOPER_DEST) -> $(LOOPER_SRC)"
+
+herdr:
+	@mkdir -p "$(dir $(HERDR_DEST))"
+	@ln -sfn "$(HERDR_SRC)" "$(HERDR_DEST)"
+	@echo "linked $(HERDR_DEST) -> $(HERDR_SRC)"
 
 codex: prompt
 	@mkdir -p "$(dir $(CODEX_AGENTS_DEST))"

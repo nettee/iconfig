@@ -11,6 +11,7 @@
 - `config/ghostty/config`
 - `config/cmux/settings.json`
 - `config/looper/config.toml`
+- `config/herdr/config.toml`
 - `config/codex/AGENTS.md`
 
 其他历史配置统一收敛到仓库根目录下的 `deprecated/`，一律视为 **deprecated**：
@@ -44,6 +45,12 @@
 - 仓库内文件：`config/looper/config.toml`
 - 目标位置：`~/.looper/config.toml`
 - 管理方式：通过 `make looper` 创建软链接
+
+### herdr
+
+- 仓库内文件：`config/herdr/config.toml`
+- 目标位置：`~/.config/herdr/config.toml`
+- 管理方式：通过 `make herdr` 创建软链接
 
 ### codex
 
@@ -112,6 +119,7 @@
 - `make ghostty`
 - `make cmux`
 - `make looper`
+- `make herdr`
 - `make codex`
 - `make p10k`
 - `make gitconfig`
