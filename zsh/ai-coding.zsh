@@ -18,9 +18,9 @@ alias csa='agent'
 
 # Google Vertex AI for OpenCode.
 # OpenCode reads Vertex auth from standard GCP env vars.
-export GOOGLE_APPLICATION_CREDENTIALS=/Users/william/.iconfig/refly-cloud-d78b83d1ba60.json
-export GOOGLE_CLOUD_PROJECT=refly-cloud
-export VERTEX_LOCATION=global
+#export GOOGLE_APPLICATION_CREDENTIALS=/Users/william/.iconfig/refly-cloud-d78b83d1ba60.json
+#export GOOGLE_CLOUD_PROJECT=refly-cloud
+#export VERTEX_LOCATION=global
 
 # Claude Code
 alias cc='claude --plugin-dir /Users/william/projects/zest-dev/plugin'
