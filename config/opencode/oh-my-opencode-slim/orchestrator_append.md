@@ -17,9 +17,3 @@ When reviewing changes:
 ## Command Preferences
 
 - Prefer `rg` (ripgrep) for text search. Use `grep` only when `rg` is unavailable or a command explicitly requires POSIX grep.
-
----
-
-## worktree-kit (wtk)
-
-If you see a WTK-AUXILIARY.md file in the repository root, read its contents and follow them.

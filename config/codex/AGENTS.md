@@ -14,12 +14,6 @@ When reviewing changes:
 
 ---
 
-## worktree-kit (wtk)
-
-If you see a WTK-AUXILIARY.md file in the repository root, read its contents and follow them.
-
----
-
 ## GitHub CLI (`gh`)
 
 Run authenticated or networked `gh` commands outside the sandbox, and if sandboxed `gh auth status` reports an invalid or unavailable login, retry the required command with sandbox escalation before asking the user to reauthenticate.
