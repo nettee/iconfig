@@ -1,13 +1,9 @@
 ## Error Handling / Fast Fail
 
-Prefer observable failures over hidden fallback behavior.
+Required operations must fail visibly when configuration, input, or invariants are invalid, or when a required dependency or subprocess fails.
 
-When writing code:
-- Fail fast on missing required config, invalid input, failed required subprocesses, failed network calls, and violated invariants.
-- Do not hide required failures with mock data, placeholder values, empty defaults, broad catches, or “best effort” success.
-- Catch errors only when there is a specific recovery path or a boundary-level reporting responsibility.
-- Non-critical logging, telemetry, tracing, or diagnostics must not block core business functionality.
-- Scripts must exit non-zero when a required step fails.
+Catch errors only to recover deliberately, add boundary context, or isolate non-critical diagnostics. Otherwise, propagate them.
 
-When reviewing changes:
-- Flag broad or empty catches, ignored errors, fallback data, retries, mocks, and success messages after partial failure.
+Do not turn failures into apparent success through fabricated fallback data, ignored errors, or success messages after incomplete work. Optional logging, telemetry, tracing, and diagnostics must not block core functionality.
+
+CLI commands and scripts must exit non-zero when required work fails. Apply the same rules when reviewing code.
